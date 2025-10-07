@@ -36,7 +36,7 @@ combo_t key_combos[COMBO_COUNT] = {
   COMBO(bcksp_combo, KC_BSPC),
   COMBO(del_combo, KC_DEL),
   COMBO(esc_combo, KC_ESC),
-  COMBO(reset_keyboard_combo, QK_BOOT),
+  COMBO(reset_keyboard_combo, QK_BOOT)
 };
 
 
