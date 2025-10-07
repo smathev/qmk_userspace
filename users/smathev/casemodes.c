@@ -15,7 +15,7 @@
  */
 
 #include "casemodes.h"
-
+#include "keymap_danish.h"
 /* The caps word concept started with me @iaap on splitkb.com discord.
  * However it has been implemented and extended by many splitkb.com users:
  * - @theol0403 made many improvements to initial implementation
