@@ -7,9 +7,9 @@
 
 set -e  # Exit on error
 
-KEYBOARD="fingerpunch/sweeeeep"
+KEYBOARD="sweeeeep"
 KEYMAP="smathev"
-OUTPUT_NAME="fingerpunch_sweeeeep_smathev"
+OUTPUT_NAME="sweeeeep_smathev"
 
 CONFIG_FILE="$HOME/git_dev/keyboards/qmk_userspace/keyboards/fingerpunch/sweeeeep/keymaps/smathev/config.h"
 BACKUP_FILE="${CONFIG_FILE}.backup"
