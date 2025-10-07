@@ -3,7 +3,7 @@
 #include QMK_KEYBOARD_H
 
 // Define the number of combos
-#define COMBO_COUNT 18
+#define COMBO_COUNT 17
 
 // Combo array declaration
 extern combo_t key_combos[COMBO_COUNT];

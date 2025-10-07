@@ -28,7 +28,10 @@
 #define AUTO_SHIFT_TIMEOUT 170  // Slightly longer than TAPPING_TERM
 #define RETRO_SHIFT             // Enable retroactive shift
 #define RETRO_TAPPING           // Enable retroactive tapping
+#define HOLD_ON_OTHER_KEY_PRESS // Enable hold on other key press
 
 // Combo configuration
 #define CASEMODES_ENABLE
 #define COMBO_REF_DEFAULT _NORTO
+
+

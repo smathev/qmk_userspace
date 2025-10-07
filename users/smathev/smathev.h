@@ -23,13 +23,6 @@
 #include "process_records.h"
 #include "keymap_danish.h"
 
-#if defined(USERSPACE_RGBLIGHT_ENABLE)
-#    include "rgb_stuff.h"
-#endif
-#if defined(HAPTIC_ENABLE)
-#    include "haptic_stuff.h"
-#endif
-
 /* Define layer names */
 enum userspace_layers {
     _NORTO= 0,

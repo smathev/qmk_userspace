@@ -1,0 +1,81 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  LIATRIS SPLIT KEYBOARD - HANDEDNESS QUICK REFERENCE            ║
+╚══════════════════════════════════════════════════════════════════╝
+
+🎯 YOUR SETUP: Fingerpunch Sweeeeep + Liatris (RP2040) Controllers
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ STEP 1: BUILD HANDEDNESS FIRMWARE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Run this script to build both files:
+  $ ./build_handedness.sh
+
+Or manually:
+  $ qmk compile -kb fingerpunch/sweeeeep -km smathev -e INIT_EE_HANDS_LEFT=yes
+  $ cp fingerpunch_sweeeeep_smathev.uf2 fingerpunch_sweeeeep_smathev_LEFT.uf2
+
+  $ qmk compile -kb fingerpunch/sweeeeep -km smathev -e INIT_EE_HANDS_RIGHT=yes
+  $ cp fingerpunch_sweeeeep_smathev.uf2 fingerpunch_sweeeeep_smathev_RIGHT.uf2
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ STEP 2: FLASH LEFT HALF
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. ⚡ Unplug BOTH keyboard halves
+2. 🔌 Plug in LEFT half to computer
+3. 🔘 Double-tap RESET button on Liatris
+   └─► A drive named "RPI-RP2" will appear
+4. 📋 Copy fingerpunch_sweeeeep_smathev_LEFT.uf2 to the RPI-RP2 drive
+5. ⏳ Board reboots automatically (drive disappears = success!)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ STEP 3: FLASH RIGHT HALF
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. ⚡ Unplug BOTH keyboard halves
+2. 🔌 Plug in RIGHT half to computer
+3. 🔘 Double-tap RESET button on Liatris
+   └─► A drive named "RPI-RP2" will appear
+4. 📋 Copy fingerpunch_sweeeeep_smathev_RIGHT.uf2 to the RPI-RP2 drive
+5. ⏳ Board reboots automatically (drive disappears = success!)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ STEP 4: TEST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Plug in ONLY left half  → Should type normally
+✓ Plug in ONLY right half → Should type normally
+✓ Connect both halves     → Should work as full split keyboard
+
+If a half types the wrong keys, re-flash that specific half.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 💡 TIPS & TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔘 Finding the RESET button:
+   - Small tactile button on the Liatris controller PCB
+   - Usually located near the USB connector
+   - Requires a small tool or fingernail to press
+
+📱 Double-tap timing:
+   - Tap quickly like a mouse double-click
+   - Too slow = won't work, too fast = won't work
+   - Practice a few times to get the timing right
+
+❌ RPI-RP2 drive doesn't appear?
+   - Try double-tapping faster or slower
+   - Use a data USB cable (not charge-only)
+   - Try a different USB port
+   - Verify Liatris is properly seated in sockets
+
+🔄 After initial setup:
+   - Future firmware updates can be flashed to BOTH halves
+   - Handedness is saved in EEPROM and persists
+   - Only need handedness files for the FIRST flash or after EEPROM reset
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 Detailed documentation: FLASH_HANDEDNESS.md
+🔧 Build script: ./build_handedness.sh
