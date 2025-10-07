@@ -16,22 +16,19 @@
 #define ENABLE_COMPILE_KEYCODE
 #pragma once
 
-// Userspace-specific configuration
-// Hardware-specific settings should be in the keyboard's config.h or info.json
+// ============================================================================
+// USERSPACE-WIDE CONFIGURATION
+// These settings apply to ALL keyboards using the smathev userspace
+// For keyboard-specific settings, use keyboards/.../keymaps/smathev/config.h
+// ============================================================================
 
 // Tapping and timing configuration
 #define TAPPING_TERM 140
 #define PERMISSIVE_HOLD         // Activate mod immediately when another key pressed
 #define AUTO_SHIFT_TIMEOUT 170  // Slightly longer than TAPPING_TERM
-#define RETRO_SHIFT
-#define RETRO_TAPPING
+#define RETRO_SHIFT             // Enable retroactive shift
+#define RETRO_TAPPING           // Enable retroactive tapping
 
 // Combo configuration
 #define CASEMODES_ENABLE
 #define COMBO_REF_DEFAULT _NORTO
-
-// Backwards compatibility with existing keymaps
-#define LAYOUT_sweeeeep LAYOUT_split_3x5_3
-
-// Custom font for OLED (if keyboard has OLED enabled)
-#define OLED_FONT_H "keyboards/fingerpunch/sweeeeep/keymaps/smathev/glcdfont.c"

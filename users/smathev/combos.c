@@ -18,7 +18,8 @@ const uint16_t PROGMEM ctcl_combo[] = {FP_SUPER_TAB, KC_PGDN, COMBO_END}; // L1_
 const uint16_t PROGMEM cancel_combo[] = {KC_LEFT, KC_HOME, COMBO_END}; // l2_K1 + L2_K2
 const uint16_t PROGMEM ctrop_combo[] = {FP_SUPER_TAB, KC_PGDN, KC_UP, COMBO_END}; // L1_K3 + L1_K4 + L1_K5
 const uint16_t PROGMEM ffive_combo[] = {KC_U, KC_G, COMBO_END}; // L1_K3 + L1_K4
-const uint16_t PROGMEM reset_keyboard_combo[] = {KC_U, KC_G, KC_J, COMBO_END}; // L1_K3 + L1_K4 + L1_K5
+const uint16_t PROGMEM reset_keyboard_left_combo[] = {KC_J, KC_M, KC_C, COMBO_END}; // L1_K3 + L1_K4 + L1_K5
+const uint16_t PROGMEM reset_keyboard_right_combo[] = {KC_B, KC_P, KC_W, COMBO_END}; // L1_K3 + L1_K4 + L1_K5
 combo_t key_combos[COMBO_COUNT] = {
   COMBO(undo_combo, LCTL(KC_Z)),
   COMBO(copy_combo, LCTL(KC_C)),
@@ -36,7 +37,8 @@ combo_t key_combos[COMBO_COUNT] = {
   COMBO(bcksp_combo, KC_BSPC),
   COMBO(del_combo, KC_DEL),
   COMBO(esc_combo, KC_ESC),
-  COMBO(reset_keyboard_combo, QK_BOOT)
+  COMBO(reset_keyboard_left_combo, QK_BOOT),
+  COMBO(reset_keyboard_right_combo, QK_BOOT)
 };
 
 
