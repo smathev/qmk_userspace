@@ -76,8 +76,7 @@
 #define SPLIT_WPM_ENABLE
 #define SPLIT_MODS_ENABLE
 #define SPLIT_LAYER_STATE_ENABLE
-// Smathev - define combos
-#define COMBO_COUNT 17
+// Smathev - define combos (COMBO_COUNT is auto-calculated by QMK)
 
 #define CASEMODES_ENABLE
 
