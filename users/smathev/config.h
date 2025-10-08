@@ -24,14 +24,13 @@
 
 // Tapping and timing configuration
 #define TAPPING_TERM 200
-//#define FLOW_TAP
+#define FLOW_TAP 130
 //#define PERMISSIVE_HOLD         // Activate mod immediately when another key pressed _REDUNDANT due to SpeculativeHold
-#define AUTO_SHIFT_TIMEOUT 150  // Slightly longer than TAPPING_TERM
+#define AUTO_SHIFT_TIMEOUT 140  // at what point are you holding the key to send a SHIFTED value
 #define RETRO_SHIFT             // Enable retroactive shift
 #define RETRO_TAPPING           // Enable retroactive tapping
 #define HOLD_ON_OTHER_KEY_PRESS // Enable hold on other key press
-//#define CHORDAL_HOLD        // Enable chordal hold (mod activates if another key is pressed before tapping term)
-                            // DISABLED: Conflicts with multi-modifier shortcuts like Ctrl+Shift+P
+#define CHORDAL_HOLD        // Enable chordal hold (mod activates if another key is pressed before tapping term)
 
 // Combo configuration
 #define CASEMODES_ENABLE
@@ -40,4 +39,3 @@
 #ifdef OLED_ENABLE
 #define OLED_DISPLAY_128X32
 #endif
-

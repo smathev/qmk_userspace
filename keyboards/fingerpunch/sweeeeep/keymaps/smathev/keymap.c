@@ -52,14 +52,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ____________NORTNAVIGATION_1_______________, _________________NUMPAD_1__________________,
         ____________NORTNAVIGATION_2_______________, _________________NUMPAD_2__________________,
         ____________NORTNAVIGATION_3_______________, _________________NUMPAD_3__________________,
-                           _______, _______, _______, _______, _______, TG(_SETUP)
+                           _______, _______, _______, _______, TG(_SETUP), _______
     ),
 
     [_SYMFKEYS] = LAYOUT_sweeeeep_base_wrapper(
         ___________________FKEY______L1________________, ________________NORTSYMBOLS_R1_________________,
         ___________________FKEY______L2________________, ________________NORTSYMBOLS_R2_________________,
         ___________________FKEY______L3________________, ________________NORTSYMBOLS_R3_________________,
-                           TG(_SETUP), _______, _______, _______, _______, _______
+                           _______, TG(_SETUP), _______, _______, _______, _______
     ),
 
         [_SETUP] = LAYOUT_sweeeeep_base_wrapper(
@@ -71,8 +71,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-// Chordal hold layout (disabled - conflicts with multi-modifier shortcuts)
-/*
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
     LAYOUT(
         'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R',
@@ -80,7 +78,6 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
         'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R',
                   '*', 'L', 'L',  'R', 'R', '*'
     );
-*/
 #ifdef OLED_ENABLE
 //    static uint32_t oled_timer = 0;
     bool process_record_oled(uint16_t keycode, keyrecord_t *record);
