@@ -279,6 +279,13 @@ NOTE: These are all the same length.  If you do a search/replace
 
 // GAMES_LAYER?
 
+
+#define _________________KB_SETUP_1________________     AS_UP,   DT_UP,   KC_C,    KC_V,    KC_G
+#define _________________KB_SETUP_2________________     AS_DOWN,    DT_DOWN,    KC_E,    KC_R,    KC_D
+#define _________________KB_SETUP_3________________     AS_RPT,    DT_PRNT,    KC_TAB,  KC_L,    KC_H
+#define _________________KB_SETUP_4________________     KC_T,    KC_COMM, KC_K,    KC_SCLN, KC_DOT
+
+
 #define ___________________GAMES_0_________________     KC_F1,   KC_F2,   KC_C,    KC_V,    KC_G
 #define ___________________GAMES_1_________________     KC_Q,    KC_W,    KC_E,    KC_R,    KC_D
 #define ___________________GAMES_2_________________     KC_A,    KC_F,    KC_TAB,  KC_L,    KC_H

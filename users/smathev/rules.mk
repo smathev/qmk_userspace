@@ -15,6 +15,8 @@ COMBO_ENABLE = yes           # Combo key feature
 INTROSPECTION_KEYMAP_C = keyboards/fingerpunch/sweeeeep/keymaps/smathev/keymap.c
 
 AUTO_SHIFT_ENABLE = yes      # Auto shift for hold-to-shift
+OLED_ENABLE = yes            # Enable OLED displays
+OLED_DRIVER = ssd1306        # Standard I2C OLED driver (SSD1306)
 
 # Implemented from  https://github.com/samhocevar-forks/qmk-firmware/blob/master/docs/feature_tap_dance.md
 # TAP_DANCE_ENABLE = yes
@@ -28,3 +30,4 @@ CASEMODE_ENABLE = yes
 #WPM ENABLE
 WPM_ENABLE = yes
 
+DYNAMIC_TAPPING_TERM_ENABLE = yes

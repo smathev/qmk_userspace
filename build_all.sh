@@ -29,6 +29,9 @@ echo ""
 # Clean build
 echo "🧹 Cleaning previous build..."
 qmk clean > /dev/null 2>&1
+echo "🧹 Cleaning previous output files..."
+rm -rf "$OUTPUT_DIR/${OUTPUT_NAME}.uf2" "$OUTPUT_DIR/${OUTPUT_NAME}_LEFT.uf2" "$OUTPUT_DIR/${OUTPUT_NAME}_RIGHT.uf2"
+mkdir -p "$OUTPUT_DIR"
 echo ""
 
 # ============================================================================

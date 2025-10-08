@@ -25,6 +25,10 @@
 // IMPORTANT: This must be set for EE_HANDS to work properly
 #define EE_HANDS
 
+#ifdef OLED_ENABLE
+#define OLED_DISPLAY_128X32
+#endif
+
 // Alternative methods (comment out EE_HANDS and use one of these if needed):
 // #define MASTER_LEFT       // Left half is always master (USB connection side)
 // #define MASTER_RIGHT      // Right half is always master (USB connection side)

@@ -15,7 +15,7 @@
  */
 #include "smathev.h"
 #include <stdio.h>
-//#include "flow_tap.c"
+#include "flow_tap.c"
 #include "wrappers.h"
 #include "casemodes.h"
 #include QMK_KEYBOARD_H
@@ -71,8 +71,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-// Chordal hold layout (disabled - conflicts with multi-modifier shortcuts)
-/*
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
     LAYOUT(
         'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R',
@@ -80,7 +78,6 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
         'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R',
                   '*', 'L', 'L',  'R', 'R', '*'
     );
-*/
 #ifdef OLED_ENABLE
 //    static uint32_t oled_timer = 0;
     bool process_record_oled(uint16_t keycode, keyrecord_t *record);
