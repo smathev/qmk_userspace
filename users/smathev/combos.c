@@ -9,7 +9,6 @@ const uint16_t PROGMEM undo_combo[] = {KC_X, KC_H, COMBO_END}; // L3_K1 + L3_K2
 const uint16_t PROGMEM cut_combo[] = {KC_H, KC_L, COMBO_END}; //L3_K2 + L3_K3
 const uint16_t PROGMEM copy_combo[] = {KC_L, KC_F, COMBO_END}; // L3_K3 + L3_K4
 const uint16_t PROGMEM paste_combo[] = {KC_C, KC_COMM, COMBO_END}; // L3_K4 + L3_K5 KC_I
-
 const uint16_t PROGMEM enter_combo[] = {KC_S, KC_D, COMBO_END}; // R2_K4 + R2_K5
 const uint16_t PROGMEM tab_combo[] = {KC_O, KC_I, COMBO_END}; // L2_K1 + L2_K2
 const uint16_t PROGMEM delete_combo[] = {KC_L, KC_H, COMBO_END}; // R1_K3 + R1_K4

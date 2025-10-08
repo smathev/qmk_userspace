@@ -7,10 +7,11 @@
 
 set -e  # Exit on error
 
-KEYBOARD="sweeeeep"
+KEYBOARD="fingerpunch/sweeeeep"
 KEYMAP="smathev"
-OUTPUT_NAME="sweeeeep_smathev"
+OUTPUT_NAME="fingerpunch_sweeeeep_smathev"
 
+QMK_USERSPACE_DIR="$HOME/git_dev/keyboards/qmk_userspace"
 CONFIG_FILE="$HOME/git_dev/keyboards/qmk_userspace/keyboards/fingerpunch/sweeeeep/keymaps/smathev/config.h"
 BACKUP_FILE="${CONFIG_FILE}.backup"
 QMK_FIRMWARE_DIR="$HOME/git_dev/keyboards/qmk_firmware"
@@ -96,8 +97,12 @@ fi
 # Restore original config
 cp "$BACKUP_FILE" "$CONFIG_FILE"
 rm "$BACKUP_FILE"
+echo "removing $QMK_FIRMWARE_DIR/${OUTPUT_NAME}.uf2"
 rm "$QMK_FIRMWARE_DIR/${OUTPUT_NAME}.uf2"
-
+echo "$QMK_FIRMWARE_DIR/${OUTPUT_NAME}.uf2 removed successfully"
+echo "removing $QMK_USERSPACE_DIR/${OUTPUT_NAME}.uf2"
+rm "$QMK_USERSPACE_DIR/${OUTPUT_NAME}.uf2"
+echo "$QMK_USERSPACE_DIR/${OUTPUT_NAME}.uf2 removed successfully"
 
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"

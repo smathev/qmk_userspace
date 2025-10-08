@@ -11,6 +11,9 @@ DEFERRED_EXEC_ENABLE = yes
 
 # Userspace-specific features
 COMBO_ENABLE = yes           # Combo key feature
+# Use the actual keymap.c for introspection instead of the generated one from keymap.json
+INTROSPECTION_KEYMAP_C = keyboards/fingerpunch/sweeeeep/keymaps/smathev/keymap.c
+
 AUTO_SHIFT_ENABLE = yes      # Auto shift for hold-to-shift
 
 # Implemented from  https://github.com/samhocevar-forks/qmk-firmware/blob/master/docs/feature_tap_dance.md

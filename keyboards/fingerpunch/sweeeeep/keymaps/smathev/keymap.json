@@ -1,3 +1,4 @@
 {
-    "converter": "liatris"
+    "converter": "liatris",
+    "modules": ["getreuer/speculative_hold"]
 }
