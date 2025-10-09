@@ -25,7 +25,7 @@
 // Tapping and timing configuration
 #define TAPPING_TERM 200
 #define FLOW_TAP 130
-//#define PERMISSIVE_HOLD         // Activate mod immediately when another key pressed _REDUNDANT due to SpeculativeHold
+#define PERMISSIVE_HOLD         // Activate mod immediately when another key pressed
 #define AUTO_SHIFT_TIMEOUT 140  // at what point are you holding the key to send a SHIFTED value
 #define RETRO_SHIFT             // Enable retroactive shift
 #define RETRO_TAPPING           // Enable retroactive tapping
