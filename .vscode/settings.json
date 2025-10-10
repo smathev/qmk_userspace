@@ -1,0 +1,29 @@
+{
+    // QMK Userspace Settings
+    "editor.insertSpaces": true,
+    "files.exclude": {
+        "**/.build": true,
+        "**/*.hex": true,
+        "**/*.bin": true,
+        "**/*.uf2": true
+    },
+    "files.associations": {
+        "*.h": "c",
+        "*.c": "c",
+        "*.inc": "c",
+        "*.cpp": "cpp",
+        "*.hpp": "cpp"
+    },
+
+    // C/C++ IntelliSense Configuration
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/compile_commands.json",
+    "C_Cpp.default.cStandard": "gnu11",
+    "C_Cpp.default.cppStandard": "gnu++14",
+    "C_Cpp.default.intelliSenseMode": "linux-gcc-arm",
+    "C_Cpp.errorSquiggles": "enabled",
+    "C_Cpp.intelliSenseEngine": "default",
+
+    // Disable clangd for this workspace (use cpptools instead)
+    "clangd.enable": false,
+    "clangd.arguments": []
+}
