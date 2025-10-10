@@ -29,15 +29,6 @@
 #define OLED_DISPLAY_128X32
 #endif
 
-// Alternative methods (comment out EE_HANDS and use one of these if needed):
-// #define MASTER_LEFT       // Left half is always master (USB connection side)
-// #define MASTER_RIGHT      // Right half is always master (USB connection side)
-// #define SPLIT_HAND_PIN    // Use a specific pin to detect handedness
-
-// Split keyboard communication settings
-// NOTE: SPLIT_USB_DETECT is NOT needed with EE_HANDS
-// EE_HANDS automatically detects USB side as master
-
 // Split keyboard features synchronization
 #define SPLIT_LAYER_STATE_ENABLE   // Sync layer state between halves
 #define SPLIT_MODS_ENABLE          // Sync modifier keys between halves

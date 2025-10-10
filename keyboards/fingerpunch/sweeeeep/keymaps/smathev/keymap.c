@@ -22,7 +22,7 @@ char wpm_str[6];
 #include "wrappers.h"
 #include "casemodes.h"
 #include QMK_KEYBOARD_H
-#include "oled.c"
+//#include "oled.c"
 
 extern keymap_config_t keymap_config;
 
@@ -98,4 +98,23 @@ bool get_speculative_hold(uint16_t keycode, keyrecord_t* record) {
       return true;
   }
   return false;  // Disable otherwise.
+}
+
+// Combo layer reference function
+// This fixes the issue where combos don't work on first press when entering a layer
+// It tells QMK which layer to check for combo key positions
+uint8_t combo_ref_from_layer(uint8_t layer) {
+    switch (get_highest_layer(layer_state)) {
+        case _NORTO:
+            return _NORTO;  // Base layer checks its own combos
+        case _NORTNAVIGATION:
+            return _NORTNAVIGATION;  // Navigation/numpad layer checks its own combos
+        case _SYMFKEYS:
+            return _SYMFKEYS;  // Symbol/function key layer checks its own combos
+        case _SETUP:
+            return _SETUP;  // Setup layer checks its own combos
+        default:
+            return _NORTO;  // All other layers default to base layer combos
+    }
+    return layer;  // Fallback (required by QMK)
 }

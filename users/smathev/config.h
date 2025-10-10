@@ -33,7 +33,6 @@
 
 // Combo configuration
 #define CASEMODES_ENABLE
-#define COMBO_REF_DEFAULT _NORTO  // Default layer for combo reference
 
 #ifdef OLED_ENABLE
 #define OLED_DISPLAY_128X32

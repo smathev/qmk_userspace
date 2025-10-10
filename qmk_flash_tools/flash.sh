@@ -157,9 +157,9 @@ main() {
     echo ""
 
     # Initial validation: clean and test compile
-    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-    echo "🧹 Validating firmware compilation..."
-    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "🧹 Cleaning previous firmware builds..."
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     echo ""
 
     cd "$QMK_FIRMWARE_DIR"
@@ -167,32 +167,6 @@ main() {
     if ! qmk clean > /dev/null 2>&1; then
         echo "⚠️  Warning: Clean failed (might be first run)"
     fi
-
-    echo "Compiling firmware to check for errors..."
-    local temp_compile=$(mktemp)
-    if qmk compile -kb "$KEYBOARD" -km "$KEYMAP" 2>&1 | tee "$temp_compile" | grep -E "(error:|warning:)" | grep -v "\[OK\]"; then
-        echo ""
-        echo "❌ Compilation failed! Please fix errors before flashing."
-        echo ""
-        echo "Full compilation output:"
-        cat "$temp_compile"
-        rm -f "$temp_compile"
-        exit 1
-    fi
-
-    if ! grep -q "Linking:.*\[OK\]" "$temp_compile"; then
-        echo ""
-        echo "❌ Compilation failed!"
-        echo ""
-        cat "$temp_compile"
-        rm -f "$temp_compile"
-        exit 1
-    fi
-
-    rm -f "$temp_compile"
-
-    echo "✅ Firmware compiles successfully!"
-    echo ""
 
     # Flash based on mode
     if [[ "$flash_mode" == "LEFT" ]] || [[ "$flash_mode" == "BOTH" ]]; then

@@ -16,21 +16,21 @@ const uint16_t PROGMEM bcksp_combo[] = {KC_H, KC_X, COMBO_END}; // R1_K4 + R1_K5
 const uint16_t PROGMEM new_tab_combo[] = {KC_G, KC_J, COMBO_END}; // L1_K4 + L1_K5
 const uint16_t PROGMEM esc_combo[] = {DK_OSTR, DK_AE, COMBO_END}; // L1_K1 + L1_K2
 const uint16_t PROGMEM search_ctrl_f_combo[] = {KC_F, KC_B, COMBO_END}; // R1_K1 + R1_K2
-const uint16_t PROGMEM close_window_combo[] = {KC_PSCR, KC_PGDN, COMBO_END}; // L1_K4 + L1_K5
+const uint16_t PROGMEM close_window_combo[] = {KC_T, KC_PGDN, COMBO_END}; // L1_K4 + L1_K5
 const uint16_t PROGMEM cancel_combo[] = {KC_LEFT, KC_HOME, COMBO_END}; // l2_K1 + L2_K2
-const uint16_t PROGMEM reopen_closed_tab_combo[] = {KC_PSCR, KC_PGDN, KC_UP, COMBO_END}; // L1_K3 + L1_K4 + L1_K5
+const uint16_t PROGMEM reopen_closed_tab_combo[] = {KC_T, KC_PGDN, KC_UP, COMBO_END}; // L1_K3 + L1_K4 + L1_K5
 const uint16_t PROGMEM ffive_reload_combo[] = {KC_U, KC_G, COMBO_END}; // L1_K3 + L1_K4
 const uint16_t PROGMEM reset_keyboard_left_combo[] = {KC_J, KC_M, KC_C, COMBO_END}; // L1_K3 + L1_K4 + L1_K5
 const uint16_t PROGMEM reset_keyboard_right_combo[] = {KC_B, KC_P, KC_W, COMBO_END}; // L1_K3 + L1_K4 + L1_K5
 combo_t key_combos[COMBO_COUNT] = {
+COMBO(reopen_closed_tab_combo, RCS(KC_T)),
+  COMBO(close_window_combo, LCTL(KC_W)),
   COMBO(undo_combo, LCTL(KC_Z)),
   COMBO(copy_combo, LCTL(KC_C)),
   COMBO(cut_combo, LCTL(KC_X)),
   COMBO(paste_combo, LCTL(KC_V)),
   COMBO(new_tab_combo, LCTL(KC_T)),
-  COMBO(close_window_combo, LCTL(KC_W)),
   COMBO(cancel_combo, LCTL(KC_C)),
-  COMBO(reopen_closed_tab_combo, RCS(KC_T)),
   COMBO(search_ctrl_f_combo, LCTL(KC_F)),
   COMBO(ffive_reload_combo, KC_F5),
   COMBO(enter_combo, KC_ENT),

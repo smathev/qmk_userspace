@@ -190,7 +190,7 @@ NOTE: These are all the same length.  If you do a search/replace
 #define __NORTNAV_L1_K2__ KC_PGUP
 #define __NORTNAV_L1_K3__ KC_UP
 #define __NORTNAV_L1_K4__ KC_PGDN
-#define __NORTNAV_L1_K5__ KC_PSCR
+#define __NORTNAV_L1_K5__ KC_T
 
 #define __NORTNAV_L2_K1__ KC_HOME
 #define __NORTNAV_L2_K2__ KC_LEFT
@@ -202,7 +202,7 @@ NOTE: These are all the same length.  If you do a search/replace
 #define __NORTNAV_L3_K2__ LALT_T(_______)
 #define __NORTNAV_L3_K3__ LSFT_T(_______)
 #define __NORTNAV_L3_K4__ LCTL_T(_______)
-#define __NORTNAV_L3_K5__ _______
+#define __NORTNAV_L3_K5__ KC_PSCR
 
 #define ____________NORTNAVIGATION_1_______________			__NORTNAV_L1_K1__, __NORTNAV_L1_K2__, __NORTNAV_L1_K3__, __NORTNAV_L1_K4__, __NORTNAV_L1_K5__
 #define ____________NORTNAVIGATION_2_______________			__NORTNAV_L2_K1__, __NORTNAV_L2_K2__, __NORTNAV_L2_K3__, __NORTNAV_L2_K4__, __NORTNAV_L2_K5__
