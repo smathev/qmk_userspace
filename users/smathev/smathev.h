@@ -26,7 +26,6 @@
 /* Define layer names */
 enum userspace_layers {
     _NORTO= 0,
-    _QWERTY,
     _NORTNAVIGATION,
     _SYMFKEYS,
     _SETUP

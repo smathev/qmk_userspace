@@ -13,17 +13,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+char wpm_str[6];
+
 #include "smathev.h"
 #include <stdio.h>
-//#include "flow_tap.c"
+#include "flow_tap.c"
 #include "wrappers.h"
 #include "casemodes.h"
 #include QMK_KEYBOARD_H
+#include "oled.c"
 
 extern keymap_config_t keymap_config;
-char wpm_str[6];
-
-#include "oled.c"
 
 // clang-format off
 #define LAYOUT_sweeeeep_base( \
@@ -84,13 +85,16 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
 
 bool get_speculative_hold(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {  // Enable speculative holding for these keys.
+    // left side modifiers baselayer
     case LGUI_T(DK_COMM):
     case LALT_T(KC_Y):
     case LSFT_T(DK_ARNG):
     case LCTL_T(KC_V):
+    // Right side modifiers baselayer
     case RCTL_T(KC_K):
     case RSFT_T(KC_Z):
     case RALT_T(KC_Q):
+    case RGUI_T(DK_DOT):
       return true;
   }
   return false;  // Disable otherwise.

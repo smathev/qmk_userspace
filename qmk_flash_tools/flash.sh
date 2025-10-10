@@ -137,7 +137,7 @@ main() {
     echo ""
     echo "╔═══════════════════════════════════════════════════════════╗"
     echo "║                                                           ║"
-    echo "║       Fingerpunch Sweeeeep - Simple Flash Script         ║"
+    echo "║       Fingerpunch Sweeeeep - Simple Flash Script          ║"
     echo "║                                                           ║"
     echo "╚═══════════════════════════════════════════════════════════╝"
     echo ""
@@ -164,7 +164,7 @@ main() {
 
     cd "$QMK_FIRMWARE_DIR"
 
-    if ! qmk clean -kb "$KEYBOARD" -km "$KEYMAP" > /dev/null 2>&1; then
+    if ! qmk clean > /dev/null 2>&1; then
         echo "⚠️  Warning: Clean failed (might be first run)"
     fi
 
