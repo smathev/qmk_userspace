@@ -23,8 +23,8 @@
 // ============================================================================
 
 // Tapping and timing configuration
-#define TAPPING_TERM 200
-#define FLOW_TAP 130
+#define TAPPING_TERM 140
+#define FLOW_TAP 120
 #define PERMISSIVE_HOLD         // Activate mod immediately when another key pressed
 #define AUTO_SHIFT_TIMEOUT 140  // at what point are you holding the key to send a SHIFTED value
 #define RETRO_SHIFT             // Enable retroactive shift
@@ -34,7 +34,7 @@
 
 // Combo configuration
 #define CASEMODES_ENABLE
-#define COMBO_REF_DEFAULT _NORTO
+//#define COMBO_REF_DEFAULT _NORTO
 
 #ifdef OLED_ENABLE
 #define OLED_DISPLAY_128X32

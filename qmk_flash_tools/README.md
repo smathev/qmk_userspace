@@ -1,38 +1,115 @@
-# QMK Flash Tools - Modular Edition
+# QMK Flash Tools# QMK Flash Tools
 
-Automated flashing tools for QMK split keyboards with RP2040 controllers (like Liatris).
 
-## 📁 Structure
+
+Simple flashing script for split keyboards with EE_HANDS.Automated flashing tools for QMK split keyboards with RP2040 controllers (like Liatris).
+
+
+
+## Usage## ⚡ Quick Start - Use the Simple Script!
+
+
+
+```bash```bash
+
+bash flash.shcd qmk_flash_tools
+
+```./autoflash_simple.sh
 
 ```
-qmk_flash_tools/
-├── autoflash_modular.sh       # Main flashing script
-├── lib/                        # Reusable library modules
+
+That's it! The script will:
+
+**✅ Recommended:** Use `autoflash_simple.sh` - it's faster, simpler, and correct.
+
+1. **Guide you to flash LEFT side**
+
+   - Plug in left halfSee [SIMPLIFIED_SCRIPT.md](SIMPLIFIED_SCRIPT.md) for details on why the simple script is better.
+
+   - Double-tap RESET button
+
+   - Script auto-mounts device and flashes firmware with left handedness## 📁 Scripts Available
+
+
+
+2. **Guide you to flash RIGHT side**| Script | Status | Description |
+
+   - Plug in right half  |--------|--------|-------------|
+
+   - Double-tap RESET button| **autoflash_simple.sh** | ✅ **RECOMMENDED** | Simple, correct workflow. Builds once, flashes both sides with same firmware. No prompts during bootloader. |
+
+   - Script auto-mounts device and flashes firmware with right handedness| **autoflash_modular.sh** | ⚠️ **OLD** | Complex workflow with design flaws. Builds firmware multiple times, prompts during bootloader (broken!). |
+
+
+
+## Features## 📁 Structure
+
+
+
+✅ **Auto-mounting**: Automatically mounts RP2040 bootloader device  ```
+
+✅ **EE_HANDS support**: Builds separate firmware for each side  qmk_flash_tools/
+
+✅ **No complex detection**: Just follow the simple instructions  ├── autoflash_simple.sh         # ✅ RECOMMENDED - Simple, correct workflow
+
+✅ **Optimized builds**: Only builds twice (once per side)├── autoflash_modular.sh        # ⚠️ OLD - Complex, has design flaws
+
+├── config.sh                   # Configuration (shared by both scripts)
+
+## Configuration├── lib/                        # Reusable library modules
+
 │   ├── device_detection.sh     # USB device detection functions
-│   ├── side_mapping.sh         # Device-to-side mapping storage
-│   └── qmk_helpers.sh          # QMK build/flash wrappers
-├── test/                       # Standalone test scripts
-│   ├── test_device_detection.sh
-│   ├── test_side_mapping.sh
-│   └── test_qmk_helpers.sh
-└── README.md                   # This file
-```
 
-## 🚀 Quick Start
+Edit `config.sh` to change:│   ├── side_mapping.sh         # Device-to-side mapping storage
 
-### 1. Flash Both Sides
+- `KEYBOARD`: Your keyboard name│   └── continuous_automount.sh # Background auto-mount monitor
 
-```bash
-cd qmk_flash_tools
-chmod +x autoflash_modular.sh
-./autoflash_modular.sh
-```
+- `KEYMAP`: Your keymap name├── docs/                       # Documentation
 
-The script will:
+- `QMK_FIRMWARE_DIR`: Path to QMK firmware directory│   ├── SIMPLIFIED_SCRIPT.md    # Why the simple script is better
+
+│   ├── WORKFLOW_GUIDE.md       # Detailed workflow documentation
+
+## Requirements│   ├── AUTOMOUNT_SETUP.md      # Auto-mount setup guide
+
+│   └── MOUNT_COMPARISON.md     # Mount methods comparison
+
+- QMK CLI installed and configured└── README.md                   # This file
+
+- RP2040-based split keyboard (like Fingerpunch boards)```
+
+- `udisksctl` for auto-mounting (usually pre-installed)
+
+## 🚀 Usage
+
+## Troubleshooting
+
+### Basic Usage (Flash Both Sides)
+
+**Device won't mount?**
+
+- Make sure you're in bootloader mode (double-tap RESET)```bash
+
+- Try manually mounting in your file manager./autoflash_simple.sh
+
+- Check if `udisksctl` is installed: `which udisksctl````
+
+
+
+**Build fails?****Note:** If your RP2040 devices don't auto-mount, see [AUTOMOUNT_SETUP.md](AUTOMOUNT_SETUP.md) for solutions. The script can auto-mount devices using `udisksctl`, or you can install udev rules for system-wide auto-mounting.
+
+- Make sure QMK is properly configured: `qmk doctor`
+
+- Check that your keyboard/keymap paths are correctThe script will:
+
 1. Build firmware once
-2. **First time only:** Ask which side you'll flash (left/right)
-3. **Subsequent runs:** Auto-detect which side is plugged in
-4. Wait for you to enter bootloader
+
+**Flash hangs?**2. **First time only:** Ask which side you'll flash (left/right)
+
+- Unplug the keyboard and try again3. **Subsequent runs:** Auto-detect which side is plugged in
+
+- Make sure only ONE keyboard half is plugged in at a time4. Wait for you to enter bootloader
+
 5. Verify and flash with correct handedness
 6. Repeat for the other side
 
@@ -318,12 +395,34 @@ The script intelligently handles three states:
 - **Protection**: Unknown devices rejected - can't flash wrong keyboard ✅
 - **Smart**: Knows when to ask vs. when to auto-detect 🧠
 
-## 📝 Additional Notes
+
+## ⚙️ Configuration
+
+All shared settings are centralized in `config.sh`:
+
+```bash
+# Keyboard and keymap
+export KEYBOARD="fingerpunch/sweeeeep"
+export KEYMAP="smathev"
+
+# USB device detection
+export USB_MOUNT_PATHS=("/media/$USER" "/run/media/$USER" "/mnt")
+export RP2040_PATTERN="*RP2040*"
+export USB_WAIT_INTERVAL=0.5
+
+# Device mapping file
+export SIDE_MAPPING_FILE="$HOME/.config/qmk_flash_tools/device_mappings.json"
+```
+
+Edit this file to customize for your setup.
+
+## �📝 Additional Notes
 
 - **Input timing**: You're asked which side BEFORE entering bootloader (so you can still type!)
 - **EEPROM wipe**: Liatris overwrites EEPROM on flash, so we use HOST USB info
 - **Board-ID**: INFO_UF2.TXT is NOT unique per device, don't rely on it
 - **USB serial**: Burned into RP2040 chip, persists even when EEPROM wiped
+- **Centralized config**: All scripts source `config.sh` for consistent settings
 
 ## 🆘 Support
 
