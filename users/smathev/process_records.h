@@ -1,17 +1,8 @@
 #pragma once
 #include "smathev.h"
 
-#if defined(KEYBOARD_fingerpunch_arachnophobe) \
-    || defined(KEYBOARD_fingerpunch_sweeeeep)
-#    define PLACEHOLDER_SAFE_RANGE FP_SAFE_RANGE
-#elif defined(KEYMAP_SAFE_RANGE)
-#    define PLACEHOLDER_SAFE_RANGE KEYMAP_SAFE_RANGE
-#else
-#    define PLACEHOLDER_SAFE_RANGE SAFE_RANGE
-#endif
-
 enum userspace_custom_keycodes {
-    C_CAPSWORD = PLACEHOLDER_SAFE_RANGE, // Toggles RGB Layer Indication mode
+    C_CAPSWORD = 0, // Toggles RGB Layer Indication mode
     C_HYPHENCASE,
     C_UNDERSCORECASE,
     C_ANYCASE,

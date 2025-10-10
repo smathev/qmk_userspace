@@ -190,7 +190,7 @@ NOTE: These are all the same length.  If you do a search/replace
 #define __NORTNAV_L1_K2__ KC_PGUP
 #define __NORTNAV_L1_K3__ KC_UP
 #define __NORTNAV_L1_K4__ KC_PGDN
-#define __NORTNAV_L1_K5__ FP_SUPER_TAB
+#define __NORTNAV_L1_K5__ KC_PSCR
 
 #define __NORTNAV_L2_K1__ KC_HOME
 #define __NORTNAV_L2_K2__ KC_LEFT
