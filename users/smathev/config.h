@@ -23,13 +23,14 @@
 // ============================================================================
 
 // Tapping and timing configuration
+
+#define AUTO_SHIFT_TIMEOUT 140  // at what point are you holding the key to send a SHIFTED value
 #define TAPPING_TERM 140
 #define FLOW_TAP 120
-#define PERMISSIVE_HOLD         // Activate mod immediately when another key pressed
-#define AUTO_SHIFT_TIMEOUT 140  // at what point are you holding the key to send a SHIFTED value
-#define RETRO_SHIFT             // Enable retroactive shift
+#define PERMISSIVE_HOLD
+#define CHORDAL_HOLD
+#define RETRO_SHIFT             // Enable retroactive shift - FUCKS UP LAYER_TAP_HOLDS
 #define RETRO_TAPPING           // Enable retroactive tapping
-#define CHORDAL_HOLD        // Enable chordal hold (mod activates if another key is pressed before tapping term)
 
 // Combo configuration
 #define CASEMODES_ENABLE

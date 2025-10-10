@@ -120,12 +120,12 @@ NOTE: These are all the same length.  If you do a search/replace
  *                  `--------------------'    `--------------------.
  */
 
-#define __NORTO_THUMB_L1__ _______
+#define __NORTO_THUMB_L1__ KC_DOT
 #define __NORTO_THUMB_L2__ DK_MINS
 #define __NORTO_THUMB_L3__ KC_E
 #define __NORTO_THUMB_R1__ KC_SPACE
 #define __NORTO_THUMB_R2__ KC_BSPC
-#define __NORTO_THUMB_R3__ _______
+#define __NORTO_THUMB_R3__ DK_COMM
 
 #define __NORTO_THUMBS_LEFT_2__                             __NORTO_THUMB_L2__, __NORTO_THUMB_L3__
 #define __NORTO_THUMBS_RIGHT_2__                            __NORTO_THUMB_R1__, __NORTO_THUMB_R2__
