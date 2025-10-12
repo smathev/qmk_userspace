@@ -133,14 +133,34 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 // CRITICAL FIX: Exclude layer-tap keys from Auto Shift/RETRO_SHIFT
 // RETRO_SHIFT interferes with layer activation, causing combos to fail on first press
 bool get_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
-    // Exclude ALL layer-tap keys from Auto Shift/RETRO_SHIFT
-    // Using IS_QK_LAYER_TAP() macro from quantum/keycodes.h
+    // First: Exclude ALL layer-tap keys from Auto Shift/RETRO_SHIFT
     if (IS_QK_LAYER_TAP(keycode)) {
         return false;  // DO NOT apply Auto Shift/RETRO_SHIFT to layer-taps
     }
 
-    // For all other keys, use QMK's default Auto Shift behavior
-    // This will auto-shift: alphas (A-Z), numbers (0-9), and symbols
+    // Second: Enable default Auto Shift for standard keys (alphas, numbers, symbols)
+    switch (keycode) {
+#ifndef NO_AUTO_SHIFT_ALPHA
+        case AUTO_SHIFT_ALPHA:
+#endif
+#ifndef NO_AUTO_SHIFT_NUMERIC
+        case AUTO_SHIFT_NUMERIC:
+#endif
+#ifndef NO_AUTO_SHIFT_SPECIAL
+# ifndef NO_AUTO_SHIFT_TAB
+        case KC_TAB:
+# endif
+# ifndef NO_AUTO_SHIFT_SYMBOLS
+        case AUTO_SHIFT_SYMBOLS:
+# endif
+#endif
+#ifdef AUTO_SHIFT_ENTER
+        case KC_ENT:
+#endif
+            return true;  // Enable Auto Shift for these standard keys
+    }
+
+    // Third: Check custom keys (Danish symbols, mod-taps, etc.)
     return get_custom_auto_shifted_key(keycode, record);
 }
 

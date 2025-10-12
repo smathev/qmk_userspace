@@ -7,7 +7,6 @@ bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
         case DK_LCBR:
         case DK_LABK:
         case DK_QUOT:
-        case DK_PLUS:
             return true;
         default:
             // Enable Auto-Shift for mod-tap keys (for Retro-Shift to work)
@@ -43,9 +42,6 @@ void autoshift_press_user(uint16_t keycode, bool shifted, keyrecord_t *record) {
             break;
         case DK_DLR:
             register_code16((!shifted) ? DK_DLR : DK_EURO);
-            break;
-        case DK_PLUS:
-            register_code16((!shifted) ? DK_PLUS : DK_QUES);
             break;
         default:
             if (shifted) {
