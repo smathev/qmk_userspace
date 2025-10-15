@@ -284,7 +284,7 @@ All keys configured for opposite-hand activation:
 │  Both Thumbs         → Access layer toggles       │
 │                                                    │
 │  Casemodes (Right thumb + right bottom row):      │
-│    Thumb + 2nd key   → CAPS WORD                  │
+│    Thumb + 2nd key   → CAPS WORD o                 │
 │    Thumb + 3rd key   → snake_case                 │
 │    Thumb + 4th key   → kebab-case                 │
 │                                                    │
