@@ -199,7 +199,7 @@ NOTE: These are all the same length.  If you do a search/replace
 #define __NORTNAV_L2_K5__ KC_END
 
 #define __NORTNAV_L3_K1__ LGUI_T(_______)
-#define __NORTNAV_L3_K2__ LALT_T(_______)
+#define __NORTNAV_L3_K2__ LALT_T(KC_K)
 #define __NORTNAV_L3_K3__ LSFT_T(_______)
 #define __NORTNAV_L3_K4__ LCTL_T(_______)
 #define __NORTNAV_L3_K5__ KC_PSCR

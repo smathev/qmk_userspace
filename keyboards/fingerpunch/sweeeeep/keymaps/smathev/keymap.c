@@ -83,16 +83,18 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
 
 bool get_speculative_hold(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {  // Enable speculative holding for these keys.
+
     // left side modifiers baselayer
     case LGUI_T(DK_COMM):
     case LALT_T(KC_Y):
     case LSFT_T(DK_ARNG):
     case LCTL_T(KC_V):
+
     // Right side modifiers baselayer
     case RCTL_T(KC_K):
     case RSFT_T(KC_Z):
     case RALT_T(KC_Q):
-    case RGUI_T(DK_DOT):
+    case LGUI_T(DK_DOT):
       return true;
   }
   return false;  // Disable otherwise.

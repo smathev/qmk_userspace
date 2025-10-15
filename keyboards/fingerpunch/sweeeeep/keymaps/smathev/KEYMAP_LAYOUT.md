@@ -211,20 +211,48 @@ All layers maintain home row mods for ergonomic modifier access:
 - ✅ OLED Display (128x32)
 - ✅ Split keyboard support
 - ✅ Combos (17 defined)
-- ✅ Auto Shift (170ms)
+- ✅ Auto Shift (175ms)
 - ✅ Casemodes
 - ✅ WPM tracking (split)
 - ✅ Modifier state tracking (split)
 - ✅ Layer state tracking (split)
 - ✅ Deferred execution
 - ✅ Permissive hold
+- ✅ Chordal hold
 - ✅ Retro shift
 - ✅ Retro tapping
+- ✅ Speculative Hold (all mod-tap keys)
+- ✅ Dummy Mod Neutralizer (prevents OS ALT/GUI interference)
 
 ### Timing Settings
-- **Tapping term**: 140ms
-- **Auto shift timeout**: 170ms
+- **Tapping term**: 175ms
+- **Auto shift timeout**: 175ms
+- **Quick tap term**: 120ms
+- **Flow tap**: 140ms
 - **OLED timeout**: 15 seconds
+
+### Speculative Hold Configuration
+**Enabled for ALL mod-tap keys:**
+- LGUI_T (Left GUI/Super on comma)
+- LALT_T (Left ALT on Y)
+- LSFT_T (Left Shift on Å)
+- LCTL_T (Left Control on V)
+- RCTL_T (Right Control on K)
+- RSFT_T (Right Shift on Z)
+- RALT_T (Right ALT on Q)
+- RGUI_T (Right GUI/Super on period)
+
+**Dummy Mod Neutralizer:**
+- Neutralizes Left ALT and Left GUI to prevent OS interference
+- Uses `KC_RIGHT_CTRL` as the dummy key
+- Allows Speculative Hold to work on ALL mod-tap keys without OS conflicts
+- Mods are briefly "flashed" with a dummy key to reset OS mode state
+
+### Chordal Hold Configuration
+All keys configured for opposite-hand activation:
+- Pressing any left-hand mod-tap + any right-hand key = immediate hold activation
+- Pressing any right-hand mod-tap + any left-hand key = immediate hold activation
+- Thumb keys marked as neutral ('*') for layer-tap behavior
 
 ### Custom Features
 - Custom OLED font (glcdfont.c)
@@ -237,10 +265,11 @@ All layers maintain home row mods for ergonomic modifier access:
 
 1. **Start with NORTO layer**: It's optimized for Danish typing
 2. **Learn home row mods**: Keep fingers on home row, use pinky/ring for GUI/ALT
-3. **Use casemodes**: They're incredibly useful for coding and writing
-4. **Practice layer switching**: Get comfortable with thumb-activated layers
-5. **Double-tap space**: Quick way to exit any casemode
-6. **OLED feedback**: Watch the OLED to see which modifiers/layers are active
+3. **Use Chordal Hold**: Press mod-tap + opposite hand key for instant hold activation
+4. **Use casemodes**: They're incredibly useful for coding and writing
+5. **Practice layer switching**: Get comfortable with thumb-activated layers
+6. **Double-tap space**: Quick way to exit any casemode
+7. **OLED feedback**: Watch the OLED to see which modifiers/layers are active
 
 ---
 

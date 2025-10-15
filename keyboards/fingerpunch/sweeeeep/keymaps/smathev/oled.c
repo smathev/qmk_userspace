@@ -237,7 +237,7 @@ void render_status_secondary(void) {
          oled_active = true;
      }
 
-     if (is_keyboard_master()) {
+     if (is_keyboard_left()) {
          render_status_main();
      } else {
          render_status_secondary();
