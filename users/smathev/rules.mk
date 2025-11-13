@@ -1,7 +1,6 @@
 SRC += smathev.c \
        process_records.c \
-       combos.c \
-       casemodes.c
+       combos.c
 
 # Build Options
 # Only include userspace-specific features here
@@ -15,9 +14,6 @@ COMBO_ENABLE = yes           # Combo key feature
 AUTO_SHIFT_ENABLE = yes      # Auto shift for hold-to-shift
 OLED_ENABLE = yes            # Enable OLED displays
 OLED_DRIVER = ssd1306        # Standard I2C OLED driver (SSD1306)
-
-# CASEMODE_ENABLE
-CASEMODE_ENABLE = yes
 
 #WPM ENABLE
 WPM_ENABLE = yes

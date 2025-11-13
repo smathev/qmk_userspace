@@ -2,7 +2,7 @@
 #include "smathev.h"
 
 enum userspace_custom_keycodes {
-    C_CAPSWORD = 0, // Toggles RGB Layer Indication mode
+    C_CAPSWORD = QK_USER_0,  // Start at QK_USER_0 to avoid conflicts with QMK keycodes
     C_HYPHENCASE,
     C_UNDERSCORECASE,
     C_ANYCASE,

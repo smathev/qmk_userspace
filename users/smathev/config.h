@@ -38,7 +38,6 @@
 #define MODS_TO_NEUTRALIZE { MOD_BIT(KC_LEFT_ALT), MOD_BIT(KC_LEFT_GUI) }
 
 // Combo configuration
-#define CASEMODES_ENABLE
 
 #ifdef OLED_ENABLE
 #define OLED_DISPLAY_128X32

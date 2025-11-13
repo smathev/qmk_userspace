@@ -1,5 +1,4 @@
 #include "smathev.h"
-#include "casemodes.h"
 #include "autoshift.c"
 
  // for alternating between 45 degree angle routing and free angle routing with one key
