@@ -18,7 +18,6 @@
 #include <stdio.h>
 #include "flow_tap.c"
 #include "wrappers.h"
-#include "casemodes.h"
 #include QMK_KEYBOARD_H
 #include "oled.c"
 

@@ -1,4 +1,7 @@
 {
     "converter": "liatris",
-    "modules": ["getreuer/speculative_hold"]
+    "modules": [
+        "getreuer/speculative_hold",
+        "ohshitgorillas/xcase"
+    ]
 }

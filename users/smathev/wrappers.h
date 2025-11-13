@@ -262,10 +262,10 @@ NOTE: These are all the same length.  If you do a search/replace
 #define __NORTSYMBOLS_R2_K5__ DK_GRV // ` - Shifted ¨
 
 #define __NORTSYMBOLS_R3_K1__ _______
-#define __NORTSYMBOLS_R3_K2__ RCTL_T(C_CAPSWORD)
-#define __NORTSYMBOLS_R3_K3__ RSFT_T(C_UNDERSCORECASE)
-#define __NORTSYMBOLS_R3_K4__ RALT_T(C_HYPHENCASE)
-#define __NORTSYMBOLS_R3_K5__ RGUI_T(_______)
+#define __NORTSYMBOLS_R3_K2__ XCASE_SNAKE
+#define __NORTSYMBOLS_R3_K3__ XCASE_KEBAB
+#define __NORTSYMBOLS_R3_K4__ XCASE_CAMEL
+#define __NORTSYMBOLS_R3_K5__ XCASE_OFF
 
 
 
