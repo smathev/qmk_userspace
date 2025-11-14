@@ -29,8 +29,8 @@
 #define FLOW_TAP 150
 #define PERMISSIVE_HOLD
 #define CHORDAL_HOLD
-#define RETRO_SHIFT             // Enable retroactive shift
-// #define RETRO_TAPPING        // DISABLED: Was causing held mod-taps to send tap keycode on release
+#define RETRO_SHIFT 500
+#define RETRO_TAPPING
 
 #define DUMMY_MOD_NEUTRALIZER_KEYCODE KC_RIGHT_CTRL
 

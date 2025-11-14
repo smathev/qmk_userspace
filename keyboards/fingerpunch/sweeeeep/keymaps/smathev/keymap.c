@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ____________NORTNAVIGATION_1_______________, _________________NUMPAD_1__________________,
         ____________NORTNAVIGATION_2_______________, _________________NUMPAD_2__________________,
         ____________NORTNAVIGATION_3_______________, _________________NUMPAD_3__________________,
-                           _______, _______, _______, _______, TG(_SETUP), _______
+                                            _NOR_NAV_THUMBS_6__
     ),
 
     [_SYMFKEYS] = LAYOUT_sweeeeep_base_wrapper(
@@ -78,7 +78,6 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
         'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R',
                   '*', 'L', 'L',  'R', 'R', '*'
     );
-
 
 bool get_speculative_hold(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {  // Enable speculative holding for these keys.

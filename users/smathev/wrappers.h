@@ -137,6 +137,22 @@ NOTE: These are all the same length.  If you do a search/replace
 #define __NORTO_THUMBS_5__                                  __NORTO_THUMB_L1__, __NORTO_THUMB_L2__, __NORTO_THUMB_R1__, __NORTO_THUMB_R2__, __NORTO_THUMB_R3__
 #define __NORTO_THUMBS_6__                                  __NORTO_THUMBS_LEFT_3__, __NORTO_THUMBS_RIGHT_3__
 
+#define _NOR_NAV_THUMB_L1_ _______
+#define _NOR_NAV_THUMB_L2_ _______
+#define _NOR_NAV_THUMB_L3_ _______
+#define _NOR_NAV_THUMB_R1_ _______
+#define _NOR_NAV_THUMB_R2_ KC_DEL
+#define _NOR_NAV_THUMB_R3_ _______
+
+#define _NOR_NAV_THUMBS_LEFT_2__                             _NOR_NAV_THUMB_L1_, _NOR_NAV_THUMB_L2_
+#define _NOR_NAV_THUMBS_RIGHT_2__                            _NOR_NAV_THUMB_R1_, _NOR_NAV_THUMB_R2_
+#define _NOR_NAV_THUMBS_LEFT_3__                             _NOR_NAV_THUMBS_LEFT_2__, _NOR_NAV_THUMB_L3_
+#define _NOR_NAV_THUMBS_RIGHT_3__                            _NOR_NAV_THUMBS_RIGHT_2__, _NOR_NAV_THUMB_R3_
+
+#define _NOR_NAV_THUMBS_4__                                  _NOR_NAV_THUMBS_LEFT_2__, _NOR_NAV_THUMBS_RIGHT_2__
+#define _NOR_NAV_THUMBS_5__                                  _NOR_NAV_THUMB_L1_, _NOR_NAV_THUMB_L2_, _NOR_NAV_THUMB_R1_, _NOR_NAV_THUMB_R2_, _NOR_NAV_THUMB_R3_
+#define _NOR_NAV_THUMBS_6__                                  _NOR_NAV_THUMBS_LEFT_3__, _NOR_NAV_THUMBS_RIGHT_3__
+
 #define ____NORTO_L1_K1__ DK_OSTR
 #define ____NORTO_L1_K2__ DK_AE
 #define ____NORTO_L1_K3__ KC_U
