@@ -153,7 +153,6 @@ main() {
         echo "  2. Flash $flash_mode side only"
     fi
     echo ""
-    echo "NO auto-detection - just follow the instructions!"
     echo ""
 
     # Initial validation: clean and test compile

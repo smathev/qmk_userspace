@@ -1,8 +1,6 @@
 #pragma once
 #include "smathev.h"
 #include "keymap_danish.h"
-//#include "features/repeat_key.h"
-//#include "features/sentence_case.h"
 
 /*
 Since our quirky block definitions are basically a list of comma separated
@@ -106,19 +104,6 @@ NOTE: These are all the same length.  If you do a search/replace
 #define __QWERTY_THUMBS_5__                                  _QWERTY_THUMB_L1__, _QWERTY_THUMB_L2__, _QWERTY_THUMB_R1__, _QWERTY_THUMB_R2__, _QWERTY_THUMB_R3__
 #define __QWERTY_THUMBS_6__                                  _QWERTY_THUMBS_LEFT_3__, _QWERTY_THUMBS_RIGHT_3__
 
-/* Norto https://lykt.xyz/skl/norto/#da
- *
- * ,----------------------------------.           ,----------------------------------.
- * |   Ø  |   Æ  |   U  |   G  |   J  |           |   B  |   F  |   L  |   H  |   X  |
- * |------+------+------+------+------|           |------+------+------+------+------|
- * |   O  |   I  |   A  |   T  |   M  |           |   P  |   N  |   R  |   S  |   D  |
- * |------+------+------+------+------|           |------+------+------+------+------|
- * |   Y  |   Å  |   V  |   C  |   ,  |           |   .  |   W  |   K  |   Z  |   Q  |
- * `----------------------------------'           `----------------------------------'
- *                  ,--------------------.    ,--------------------.
- *                  | LOWER| Enter|   E  |    |BckSpc| Space| RAISE|
- *                  `--------------------'    `--------------------.
- */
 
 #define __NORTO_THUMB_L1__ KC_DOT
 #define __NORTO_THUMB_L2__ DK_MINS
@@ -183,7 +168,7 @@ NOTE: These are all the same length.  If you do a search/replace
 #define ____NORTO_R2_K4__ KC_S
 #define ____NORTO_R2_K5__ KC_D
 
-#define ____NORTO_R3_K1__ LT(_SYMFKEYS, KC_W)
+#define ____NORTO_R3_K1__ KC_W
 #define ____NORTO_R3_K2__ RCTL_T(KC_K)
 #define ____NORTO_R3_K3__ RSFT_T(KC_Z)
 #define ____NORTO_R3_K4__ RALT_T(KC_Q)
@@ -215,10 +200,10 @@ NOTE: These are all the same length.  If you do a search/replace
 #define __NORTNAV_L2_K5__ KC_END
 
 #define __NORTNAV_L3_K1__ LGUI_T(_______)
-#define __NORTNAV_L3_K2__ LALT_T(KC_K)
+#define __NORTNAV_L3_K2__ LALT_T(_______)
 #define __NORTNAV_L3_K3__ LSFT_T(_______)
 #define __NORTNAV_L3_K4__ LCTL_T(_______)
-#define __NORTNAV_L3_K5__ KC_PSCR
+#define __NORTNAV_L3_K5__ LT(_SYMFKEYS, KC_PSCR)
 
 #define ____________NORTNAVIGATION_1_______________			__NORTNAV_L1_K1__, __NORTNAV_L1_K2__, __NORTNAV_L1_K3__, __NORTNAV_L1_K4__, __NORTNAV_L1_K5__
 #define ____________NORTNAVIGATION_2_______________			__NORTNAV_L2_K1__, __NORTNAV_L2_K2__, __NORTNAV_L2_K3__, __NORTNAV_L2_K4__, __NORTNAV_L2_K5__
@@ -261,14 +246,14 @@ NOTE: These are all the same length.  If you do a search/replace
 
 #define ______FKEY____L3_K1__ LGUI_T(KC_F11)
 #define ______FKEY____L3_K2__ LALT_T(KC_F12)
-#define ______FKEY____L3_K3__ LSFT_T(KC_C)
-#define ______FKEY____L3_K4__ LCTL_T(KC_V)
-#define ______FKEY____L3_K5__ KC_B
+#define ______FKEY____L3_K3__ LSFT_T(_______)
+#define ______FKEY____L3_K4__ LCTL_T(_______)
+#define ______FKEY____L3_K5__ _______
 
 
 #define __NORTSYMBOLS_R1_K1__ _______
-#define __NORTSYMBOLS_R1_K2__ XCASE_SNAKE
-#define __NORTSYMBOLS_R1_K3__ XCASE_KEBAB
+#define __NORTSYMBOLS_R1_K2__ XCASE_DK_SNAKE
+#define __NORTSYMBOLS_R1_K3__ XCASE_DK_KEBAB
 #define __NORTSYMBOLS_R1_K4__ XCASE_CAMEL
 #define __NORTSYMBOLS_R1_K5__ XCASE_OFF
 
@@ -304,5 +289,67 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _________________KB_SETUP_4________________     KC_T,    KC_COMM, KC_K,    KC_SCLN, KC_DOT
 
 
+// FKeys + SYM
+#define ____MOUSENAV__L1_K1__ _______
+#define ____MOUSENAV__L1_K2__ MS_WHLU
+#define ____MOUSENAV__L1_K3__ MS_UP
+#define ____MOUSENAV__L1_K4__ MS_WHLD
+#define ____MOUSENAV__L1_K5__ _______
+
+#define ____MOUSENAV__L2_K1__ MS_WHLL
+#define ____MOUSENAV__L2_K2__ MS_LEFT
+#define ____MOUSENAV__L2_K3__ MS_DOWN
+#define ____MOUSENAV__L2_K4__ MS_RGHT
+#define ____MOUSENAV__L2_K5__ MS_WHLR
+
+#define ____MOUSENAV__L3_K1__ LGUI_T(_______)
+#define ____MOUSENAV__L3_K2__ LALT_T(_______)
+#define ____MOUSENAV__L3_K3__ LSFT_T(_______)
+#define ____MOUSENAV__L3_K4__ LCTL_T(_______)
+#define ____MOUSENAV__L3_K5__ _______
+
+
+#define ___MOUSENAV_R1_K1___ MS_ACL0
+#define ___MOUSENAV_R1_K2___ MS_ACL1
+#define ___MOUSENAV_R1_K3___ MS_ACL2
+#define ___MOUSENAV_R1_K4___ _______
+#define ___MOUSENAV_R1_K5___ _______
+
+#define ___MOUSENAV_R2_K1___ _______
+#define ___MOUSENAV_R2_K2___ MS_BTN1
+#define ___MOUSENAV_R2_K3___ MS_BTN2
+#define ___MOUSENAV_R2_K4___ MS_BTN2
+#define ___MOUSENAV_R2_K5___ _______
+
+#define ___MOUSENAV_R3_K1___ LGUI_T(_______)
+#define ___MOUSENAV_R3_K2___ LALT_T(_______)
+#define ___MOUSENAV_R3_K3___ LSFT_T(_______)
+#define ___MOUSENAV_R3_K4___ LCTL_T(_______)
+#define ___MOUSENAV_R3_K5___ _______
+
+#define _________________MOUSENAV____L1________________			____MOUSENAV__L1_K1__, ____MOUSENAV__L1_K2__, ____MOUSENAV__L1_K3__, ____MOUSENAV__L1_K4__, ____MOUSENAV__L1_K5__
+#define _________________MOUSENAV____L2________________			____MOUSENAV__L2_K1__, ____MOUSENAV__L2_K2__, ____MOUSENAV__L2_K3__, ____MOUSENAV__L2_K4__, ____MOUSENAV__L2_K5__
+#define _________________MOUSENAV____L3________________         ____MOUSENAV__L3_K1__, ____MOUSENAV__L3_K2__, ____MOUSENAV__L3_K3__, ____MOUSENAV__L3_K4__, ____MOUSENAV__L3_K5__
+
+#define ________________MOUSENAV_R1_________________			___MOUSENAV_R1_K1___, ___MOUSENAV_R1_K2___, ___MOUSENAV_R1_K3___, ___MOUSENAV_R1_K4___, ___MOUSENAV_R1_K5___
+#define ________________MOUSENAV_R2_________________			___MOUSENAV_R2_K1___, ___MOUSENAV_R2_K2___, ___MOUSENAV_R2_K3___, ___MOUSENAV_R2_K4___, ___MOUSENAV_R2_K5___
+#define ________________MOUSENAV_R3_________________			___MOUSENAV_R3_K1___, ___MOUSENAV_R3_K2___, ___MOUSENAV_R3_K3___, ___MOUSENAV_R3_K4___, ___MOUSENAV_R3_K5___
+
+
+#define __MOUSENAV_THUMB_L1__ MS_BTN3
+#define __MOUSENAV_THUMB_L2__ MS_BTN2
+#define __MOUSENAV_THUMB_L3__ MS_BTN1
+#define __MOUSENAV_THUMB_R1__ _______
+#define __MOUSENAV_THUMB_R2__ _______
+#define __MOUSENAV_THUMB_R3__ _______
+
+#define _MOUSENAV_THUMBS_LEFT_2__                             __MOUSENAV_THUMB_L1__, __MOUSENAV_THUMB_L2__
+#define _MOUSENAV_THUMBS_RIGHT_2__                            __MOUSENAV_THUMB_R1__, __MOUSENAV_THUMB_R2__
+#define _MOUSENAV_THUMBS_LEFT_3__                             _MOUSENAV_THUMBS_LEFT_2__, __MOUSENAV_THUMB_L3__
+#define _MOUSENAV_THUMBS_RIGHT_3__                            _MOUSENAV_THUMBS_RIGHT_2__, __MOUSENAV_THUMB_R3__
+
+#define _MOUSENAV_THUMBS_4__                                  _MOUSENAV_THUMBS_LEFT_2__, _MOUSENAV_THUMBS_RIGHT_2__
+#define _MOUSENAV_THUMBS_5__                                  __MOUSENAV_THUMB_L1__, __MOUSENAV_THUMB_L2__, __MOUSENAV_THUMB_R1__, __MOUSENAV_THUMB_R2__, __MOUSENAV_THUMB_R3__
+#define _MOUSENAV_THUMBS_6__                                  _MOUSENAV_THUMBS_LEFT_3__, _MOUSENAV_THUMBS_RIGHT_3__
 
 // clang-format on

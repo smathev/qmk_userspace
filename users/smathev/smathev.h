@@ -28,7 +28,8 @@ enum userspace_layers {
     _NORTO= 0,
     _NORTNAVIGATION,
     _SYMFKEYS,
-    _SETUP
+    _SETUP,
+    _MOUSENAV
 };
 
 void          press_super_alt_tab(bool shift);

@@ -37,7 +37,7 @@ extern keymap_config_t keymap_config;
         K01,    K02,    K03,    K04, 	K05,	K06,	K07,	K08,	K09,	K0A, \
         K11,    K12,    K13,    K14,    K15,    K16,    K17,    K18,    K19,    K1A, \
         K21,    K22,    K23,    K24,    K25,    K26,    K27,    K28,    K29,    K2A, \
-            LT(_NORTNAVIGATION, K33),  K34,    K35,    K36,    K37,    LT(_SYMFKEYS, K38) \
+            LT(_NORTNAVIGATION, K33),  K34,    K35,    K36,    K37,    LT(_MOUSENAV, K38) \
     )
 
 /* Re-pass though to allow templates to be used */
@@ -48,14 +48,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         __________________NORTO_L1____________________, __________________NORTO_R1____________________,
         __________________NORTO_L2____________________, __________________NORTO_R2____________________,
         __________________NORTO_L3____________________, __________________NORTO_R3____________________,
-                                              __NORTO_THUMBS_6__
+                                                        __NORTO_THUMBS_6__
     ),
 
     [_NORTNAVIGATION] = LAYOUT_sweeeeep_base_wrapper(
         ____________NORTNAVIGATION_1_______________, _________________NUMPAD_1__________________,
         ____________NORTNAVIGATION_2_______________, _________________NUMPAD_2__________________,
         ____________NORTNAVIGATION_3_______________, _________________NUMPAD_3__________________,
-                                            _NOR_NAV_THUMBS_6__
+                                                        _NOR_NAV_THUMBS_6__
     ),
 
     [_SYMFKEYS] = LAYOUT_sweeeeep_base_wrapper(
@@ -70,6 +70,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         __________________QWERTY_L2____________________, _________________KB_SETUP_2________________,
         __________________QWERTY_L3____________________, _________________KB_SETUP_3________________,
                            _______, TG(_SETUP), TG(_NORTO), TG(_NORTO), TG(_SETUP), _______
+    ),
+
+        [_MOUSENAV] = LAYOUT_sweeeeep_base_wrapper(
+        _________________MOUSENAV____L1________________, ________________MOUSENAV_R1_________________,
+        _________________MOUSENAV____L2________________, ________________MOUSENAV_R2_________________,
+        _________________MOUSENAV____L3________________, ________________MOUSENAV_R3_________________,
+                                                            _MOUSENAV_THUMBS_6__
     )
 
 };

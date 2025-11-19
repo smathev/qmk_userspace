@@ -2,7 +2,9 @@
 #include "smathev.h"
 
 enum userspace_custom_keycodes {
-    NEW_SAFE_RANGE = QK_USER_0  // Start at QK_USER_0 to avoid conflicts with QMK keycodes
+    XCASE_DK_SNAKE = QK_USER_0,  // Danish snake_case with DK_UNDS
+    XCASE_DK_KEBAB,              // Danish kebab-case with DK_MINS
+    NEW_SAFE_RANGE
 };
 
 bool process_record_secrets(uint16_t keycode, keyrecord_t *record);
