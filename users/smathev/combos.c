@@ -6,8 +6,8 @@
 
 //LAYER1
 // l3 + R3 doesn't work because of homerow-mods
-const uint16_t PROGMEM undo_combo[] = {KC_A, KC_I, COMBO_END}; // LAYER1 L3_K1 + L3_K2
-const uint16_t PROGMEM cut_combo[] = {KC_A, LCTL_T(KC_V), COMBO_END}; //LAYER1 L3_K2 + L3_K3
+//const uint16_t PROGMEM undo_combo[] = {KC_A, KC_I, COMBO_END}; // LAYER1 L3_K1 + L3_K2
+//const uint16_t PROGMEM cut_combo[] = {KC_A, LCTL_T(KC_V), COMBO_END}; //LAYER1 L3_K2 + L3_K3
 //const uint16_t PROGMEM copy_combo[] = {KC_A, KC_T, COMBO_END}; // LAYER1 L3_K3 + L3_K4
 //const uint16_t PROGMEM paste_combo[] = {KC_A, KC_M, COMBO_END}; // L3_K4 + L3_K5 KC_I
 
@@ -36,9 +36,9 @@ const uint16_t PROGMEM search_ctrl_f_combo[] = {KC_F, KC_B, COMBO_END}; // R1_K1
 combo_t key_combos[COMBO_COUNT] = {
 COMBO(reopen_closed_tab_combo, RCS(KC_T)),
   COMBO(close_window_combo, LCTL(KC_W)),
-  COMBO(undo_combo, LCTL(KC_Z)),
+//  COMBO(undo_combo, LCTL(KC_Z)),
 //  COMBO(copy_combo, LCTL(KC_C)),
-  COMBO(cut_combo, LCTL(KC_X)),
+//  COMBO(cut_combo, LCTL(KC_X)),
 //  COMBO(paste_combo, LCTL(KC_V)),
   COMBO(new_tab_combo, LCTL(KC_T)),
   COMBO(cancel_combo, LCTL(KC_C)),
