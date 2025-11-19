@@ -21,6 +21,9 @@
 #include QMK_KEYBOARD_H
 #include "oled.c"
 
+// Forward declaration for xcase function
+void add_exclusion_keycode(uint16_t keycode);
+
 extern keymap_config_t keymap_config;
 
 // clang-format off
@@ -96,4 +99,11 @@ bool get_speculative_hold(uint16_t keycode, keyrecord_t* record) {
       return true;
   }
   return false;  // Disable otherwise.
+}
+
+void keyboard_post_init_keymap(void) {
+    // Add Danish characters as exclusion keycodes for xcase
+    add_exclusion_keycode(DK_ARNG);  // Å
+    add_exclusion_keycode(DK_AE);    // Æ
+    add_exclusion_keycode(DK_OSTR);  // Ø
 }

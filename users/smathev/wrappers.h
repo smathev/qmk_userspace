@@ -183,7 +183,7 @@ NOTE: These are all the same length.  If you do a search/replace
 #define ____NORTO_R2_K4__ KC_S
 #define ____NORTO_R2_K5__ KC_D
 
-#define ____NORTO_R3_K1__ KC_W
+#define ____NORTO_R3_K1__ LT(_SYMFKEYS, KC_W)
 #define ____NORTO_R3_K2__ RCTL_T(KC_K)
 #define ____NORTO_R3_K3__ RSFT_T(KC_Z)
 #define ____NORTO_R3_K4__ RALT_T(KC_Q)
@@ -265,23 +265,26 @@ NOTE: These are all the same length.  If you do a search/replace
 #define ______FKEY____L3_K4__ LCTL_T(KC_V)
 #define ______FKEY____L3_K5__ KC_B
 
-#define __NORTSYMBOLS_R1_K1__ DK_AT // @
-#define __NORTSYMBOLS_R1_K2__ DK_LBRC // [ - Shifted ]
-#define __NORTSYMBOLS_R1_K3__ DK_LCBR // { - Shifted {}
-#define __NORTSYMBOLS_R1_K4__ DK_CIRC
-#define __NORTSYMBOLS_R1_K5__ _______
 
-#define __NORTSYMBOLS_R2_K1__ DK_QUOT // ' SHFITED "
-#define __NORTSYMBOLS_R2_K2__ DK_LABK // < - Shifted >
-#define __NORTSYMBOLS_R2_K3__ DK_DLR // $ - Shifted €
-#define __NORTSYMBOLS_R2_K4__ DK_PIPE // |
-#define __NORTSYMBOLS_R2_K5__ DK_GRV // ` - Shifted ¨
+#define __NORTSYMBOLS_R1_K1__ _______
+#define __NORTSYMBOLS_R1_K2__ XCASE_SNAKE
+#define __NORTSYMBOLS_R1_K3__ XCASE_KEBAB
+#define __NORTSYMBOLS_R1_K4__ XCASE_CAMEL
+#define __NORTSYMBOLS_R1_K5__ XCASE_OFF
 
-#define __NORTSYMBOLS_R3_K1__ _______
-#define __NORTSYMBOLS_R3_K2__ XCASE_SNAKE
-#define __NORTSYMBOLS_R3_K3__ XCASE_KEBAB
-#define __NORTSYMBOLS_R3_K4__ XCASE_CAMEL
-#define __NORTSYMBOLS_R3_K5__ XCASE_OFF
+#define __NORTSYMBOLS_R2_K1__ DK_AT // @
+#define __NORTSYMBOLS_R2_K2__ DK_LBRC // [ - Shifted ]
+#define __NORTSYMBOLS_R2_K3__ DK_LCBR // { - Shifted {}
+#define __NORTSYMBOLS_R2_K4__ DK_CIRC
+#define __NORTSYMBOLS_R2_K5__ _______
+
+#define __NORTSYMBOLS_R3_K1__ DK_QUOT // ' SHFITED "
+#define __NORTSYMBOLS_R3_K2__ DK_LABK // < - Shifted >
+#define __NORTSYMBOLS_R3_K3__ DK_DLR // $ - Shifted €
+#define __NORTSYMBOLS_R3_K4__ DK_PIPE // |
+#define __NORTSYMBOLS_R3_K5__ DK_GRV // ` - Shifted ¨
+
+
 
 
 
@@ -293,7 +296,6 @@ NOTE: These are all the same length.  If you do a search/replace
 #define ________________NORTSYMBOLS_R2_________________			__NORTSYMBOLS_R2_K1__, __NORTSYMBOLS_R2_K2__, __NORTSYMBOLS_R2_K3__, __NORTSYMBOLS_R2_K4__, __NORTSYMBOLS_R2_K5__
 #define ________________NORTSYMBOLS_R3_________________			__NORTSYMBOLS_R3_K1__, __NORTSYMBOLS_R3_K2__, __NORTSYMBOLS_R3_K3__, __NORTSYMBOLS_R3_K4__, __NORTSYMBOLS_R3_K5__
 
-// GAMES_LAYER?
 
 
 #define _________________KB_SETUP_1________________     AS_UP,   DT_UP,   KC_C,    KC_V,    KC_G
@@ -301,25 +303,6 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _________________KB_SETUP_3________________     AS_RPT,    DT_PRNT,    KC_TAB,  KC_L,    KC_H
 #define _________________KB_SETUP_4________________     KC_T,    KC_COMM, KC_K,    KC_SCLN, KC_DOT
 
-
-#define ___________________GAMES_0_________________     KC_F1,   KC_F2,   KC_C,    KC_V,    KC_G
-#define ___________________GAMES_1_________________     KC_Q,    KC_W,    KC_E,    KC_R,    KC_D
-#define ___________________GAMES_2_________________     KC_A,    KC_F,    KC_TAB,  KC_L,    KC_H
-#define ___________________GAMES_3_________________     KC_T,    KC_COMM, KC_K,    KC_SCLN, KC_DOT
-#define __GAMES_R0_L__ KC_F4
-#define __GAMES_R1_L__ KC_Z
-#define __GAMES_R2_L__ KC_P
-#define __GAMES_R3_L__ KC_LSFT
-#define __GAMES_R0_R__ KC_N
-#define __GAMES_R1_R__ KC_Y
-#define __GAMES_R2_R__ KC_F7
-#define __GAMES_R3_R__ KC_ESC
-#define __GAMES_TH_L__ KC_LALT
-#define __GAMES_TH_C__ KC_X
-#define __GAMES_TH_R__ KC_B
-#define __GAMES_R4_1__ KC_J
-#define __GAMES_R4_2__ __GAMES_R3_R__
-#define __GAMES_R4_3__ KC_LCTL
 
 
 // clang-format on

@@ -1,52 +1,30 @@
 #!/usr/bin/env bash
 
-# Script to update xcase module and reapply Danish letter patch
+# Script to update xcase module
+# Note: Danish character support is now handled via add_exclusion_keycode() API
+# in keyboard_post_init_user() - no patching required!
 # Usage: ./update-xcase-with-patch.sh
 
 XCASE_DIR="/home/smathev/git_dev/keyboards/qmk_userspace/modules/ohshitgorillas/xcase"
-PATCH_FILE="$HOME/xcase-danish-letters.patch"
 
 echo "🔄 Updating xcase module..."
 cd "$XCASE_DIR" || exit 1
 
 # Check if there are local changes
-if git diff --quiet; then
+if git diff --quiet && git diff --cached --quiet; then
     echo "✓ No local changes detected"
 else
-    echo "⚠️  Local changes detected, creating/updating patch file..."
-    git diff > "$PATCH_FILE"
-    echo "✓ Patch saved to $PATCH_FILE"
+    echo "⚠️  Local changes detected - please commit or stash them first"
+    exit 1
 fi
-
-# Stash any changes
-git stash
 
 # Pull latest updates
 echo "📥 Pulling latest xcase updates..."
 git pull origin main
 
-# Apply the patch
-if [ -f "$PATCH_FILE" ]; then
-    echo "🩹 Applying Danish letter patch..."
-    if git apply --check "$PATCH_FILE" 2>/dev/null; then
-        git apply "$PATCH_FILE"
-        echo "✓ Patch applied successfully!"
-    else
-        echo "❌ Patch failed to apply cleanly"
-        echo "Trying 3-way merge..."
-        if git apply --3way "$PATCH_FILE"; then
-            echo "✓ Patch applied with 3-way merge"
-        else
-            echo "⚠️  Manual intervention required"
-            echo "Please check $XCASE_DIR/xcase.c for conflicts"
-        fi
-    fi
-else
-    echo "⚠️  No patch file found at $PATCH_FILE"
-    echo "Your changes may have been stashed. Use 'git stash pop' to restore them."
-fi
-
 # Return to original directory
 cd - > /dev/null || exit 1
 
-echo "✅ Done! Compile and test your firmware."
+echo "✅ Done! Danish characters are supported via add_exclusion_keycode() in keymap.c"
+echo "   No patching required - the upstream xcase now has proper API support."
+
