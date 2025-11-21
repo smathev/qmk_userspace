@@ -25,12 +25,13 @@
 // Tapping and timing configuration
 
 #define AUTO_SHIFT_TIMEOUT 175   // at what point are you holding the key to send a SHIFTED value
-#define TAPPING_TERM 175
+#define TAPPING_TERM 175   // Enable per-key tapping term (needed for tap dance timing)
 #define FLOW_TAP 150
 #define PERMISSIVE_HOLD
 #define CHORDAL_HOLD
 #define RETRO_SHIFT 500
 #define RETRO_TAPPING
+
 
 #define DUMMY_MOD_NEUTRALIZER_KEYCODE KC_RIGHT_CTRL
 

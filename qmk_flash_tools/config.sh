@@ -27,9 +27,15 @@ export KEYBOARD_SAFE=$(echo "$KEYBOARD" | tr '/' '_')
 # Path to QMK firmware directory (where qmk commands are run)
 # Auto-detect: goes up from qmk_userspace/qmk_flash_tools to qmk_firmware
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export QMK_USERSPACE_DIR="$(dirname "$(dirname "$SCRIPT_DIR")")/qmk_userspace"
 export QMK_FIRMWARE_DIR="$(dirname "$(dirname "$SCRIPT_DIR")")/qmk_firmware"
 
-# Verify QMK firmware directory exists
+# Verify directories exist
+if [[ ! -d "$QMK_USERSPACE_DIR" ]]; then
+    echo "❌ Error: QMK userspace directory not found: $QMK_USERSPACE_DIR" >&2
+    echo "   Please set QMK_USERSPACE_DIR in config.sh" >&2
+fi
+
 if [[ ! -d "$QMK_FIRMWARE_DIR" ]]; then
     echo "❌ Error: QMK firmware directory not found: $QMK_FIRMWARE_DIR" >&2
     echo "   Please set QMK_FIRMWARE_DIR in config.sh" >&2

@@ -22,6 +22,7 @@ bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
 void autoshift_press_user(uint16_t keycode, bool shifted, keyrecord_t *record) {
     switch(keycode) {
         case DK_MINS:
+        case LT(_NORTNAVIGATION, DK_MINS):
             register_code16((!shifted) ? DK_MINS : DK_UNDS);
             break;
         case DK_SLSH:
@@ -57,6 +58,7 @@ void autoshift_press_user(uint16_t keycode, bool shifted, keyrecord_t *record) {
 void autoshift_release_user(uint16_t keycode, bool shifted, keyrecord_t *record) {
     switch(keycode) {
         case DK_MINS:
+        case LT(_NORTNAVIGATION, DK_MINS):
             unregister_code16((!shifted) ? DK_MINS : DK_UNDS);
             break;
         case DK_SLSH:

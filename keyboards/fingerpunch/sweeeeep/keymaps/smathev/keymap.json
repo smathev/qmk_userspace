@@ -2,6 +2,7 @@
     "converter": "liatris",
     "modules": [
         "getreuer/speculative_hold",
+        "getreuer/orbital_mouse",
         "ohshitgorillas/xcase"
     ]
 }

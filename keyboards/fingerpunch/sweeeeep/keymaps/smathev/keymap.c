@@ -37,7 +37,7 @@ extern keymap_config_t keymap_config;
         K01,    K02,    K03,    K04, 	K05,	K06,	K07,	K08,	K09,	K0A, \
         K11,    K12,    K13,    K14,    K15,    K16,    K17,    K18,    K19,    K1A, \
         K21,    K22,    K23,    K24,    K25,    K26,    K27,    K28,    K29,    K2A, \
-            LT(_NORTNAVIGATION, K33),  K34,    K35,    K36,    K37,    LT(_MOUSENAV, K38) \
+            K33,  K34,    K35,    K36,    K37,  K38 \
     )
 
 /* Re-pass though to allow templates to be used */
@@ -86,7 +86,7 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
         'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R',
         'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R',
         'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R',
-                  '*', 'L', 'L',  'R', 'R', '*'
+                  '*', '*', '*',  '*', '*', '*'
     );
 
 bool get_speculative_hold(uint16_t keycode, keyrecord_t* record) {
@@ -114,3 +114,23 @@ void keyboard_post_init_keymap(void) {
     add_exclusion_keycode(DK_AE);    // Æ
     add_exclusion_keycode(DK_OSTR);  // Ø
 }
+
+// ============================================================================
+// TAP DANCE ARRAY - Defined here for QMK introspection
+// Actual functions are in users/smathev/tap_dance.c
+// ============================================================================
+#ifdef TAP_DANCE_ENABLE
+
+// Forward declarations from tap_dance.c
+void td_bspc_mouse_finished(tap_dance_state_t *state, void *user_data);
+void td_bspc_mouse_reset(tap_dance_state_t *state, void *user_data);
+void td_mins_nav_finished(tap_dance_state_t *state, void *user_data);
+void td_mins_nav_reset(tap_dance_state_t *state, void *user_data);
+
+// Tap Dance actions array - must be in keymap for QMK introspection
+tap_dance_action_t tap_dance_actions[] = {
+    [TD_BSPC_MOUSE] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_bspc_mouse_finished, td_bspc_mouse_reset),
+    [TD_MINS_NAV] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_mins_nav_finished, td_mins_nav_reset),
+};
+
+#endif // TAP_DANCE_ENABLE

@@ -1,6 +1,7 @@
 SRC += smathev.c \
        process_records.c \
-       combos.c
+       combos.c \
+       hold_on_other_key_press.c
 
 # Build Options
 # Only include userspace-specific features here

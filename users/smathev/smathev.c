@@ -125,20 +125,15 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case LSFT_T(KC_T):
         case RSFT_T(KC_N):
             return 75;
+        // Much longer tapping term for tap dance to make double-hold easier
+        case QK_TAP_DANCE ... QK_TAP_DANCE_MAX:
+            return 500;  // Generous window for double-tap-hold sequence
         default:
             return TAPPING_TERM;
     }
 }
 
-// CRITICAL FIX: Exclude layer-tap keys from Auto Shift/RETRO_SHIFT
-// RETRO_SHIFT interferes with layer activation, causing combos to fail on first press
 bool get_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
-    // First: Exclude ALL layer-tap keys from Auto Shift/RETRO_SHIFT
-    if (IS_QK_LAYER_TAP(keycode)) {
-        return false;  // DO NOT apply Auto Shift/RETRO_SHIFT to layer-taps
-    }
-
-    // Second: Enable default Auto Shift for standard keys (alphas, numbers, symbols)
     switch (keycode) {
 #ifndef NO_AUTO_SHIFT_ALPHA
         case AUTO_SHIFT_ALPHA:

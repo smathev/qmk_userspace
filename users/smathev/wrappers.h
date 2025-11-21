@@ -105,12 +105,12 @@ NOTE: These are all the same length.  If you do a search/replace
 #define __QWERTY_THUMBS_6__                                  _QWERTY_THUMBS_LEFT_3__, _QWERTY_THUMBS_RIGHT_3__
 
 
-#define __NORTO_THUMB_L1__ KC_DOT
-#define __NORTO_THUMB_L2__ DK_MINS
-#define __NORTO_THUMB_L3__ KC_E
+#define __NORTO_THUMB_L1__ _______
+#define __NORTO_THUMB_L2__ LT(_MOUSENAV, DK_MINS)
+#define __NORTO_THUMB_L3__ LT(_NORTNAVIGATION, KC_E)
 #define __NORTO_THUMB_R1__ KC_SPACE
 #define __NORTO_THUMB_R2__ KC_BSPC
-#define __NORTO_THUMB_R3__ DK_COMM
+#define __NORTO_THUMB_R3__ _______
 
 #define __NORTO_THUMBS_LEFT_2__                             __NORTO_THUMB_L2__, __NORTO_THUMB_L3__
 #define __NORTO_THUMBS_RIGHT_2__                            __NORTO_THUMB_R1__, __NORTO_THUMB_R2__
@@ -289,36 +289,99 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _________________KB_SETUP_4________________     KC_T,    KC_COMM, KC_K,    KC_SCLN, KC_DOT
 
 
-// FKeys + SYM
+// // MOUSENAV
+// #define ____MOUSENAV__L1_K1__ _______
+// #define ____MOUSENAV__L1_K2__ MS_WHLU
+// #define ____MOUSENAV__L1_K3__ MS_UP
+// #define ____MOUSENAV__L1_K4__ MS_WHLD
+// #define ____MOUSENAV__L1_K5__ _______
+
+// #define ____MOUSENAV__L2_K1__ MS_WHLL
+// #define ____MOUSENAV__L2_K2__ MS_LEFT
+// #define ____MOUSENAV__L2_K3__ MS_DOWN
+// #define ____MOUSENAV__L2_K4__ MS_RGHT
+// #define ____MOUSENAV__L2_K5__ MS_WHLR
+
+// #define ____MOUSENAV__L3_K1__ LGUI_T(_______)
+// #define ____MOUSENAV__L3_K2__ LALT_T(_______)
+// #define ____MOUSENAV__L3_K3__ LSFT_T(_______)
+// #define ____MOUSENAV__L3_K4__ LCTL_T(_______)
+// #define ____MOUSENAV__L3_K5__ _______
+
+
+// #define ___MOUSENAV_R1_K1___ MS_ACL0
+// #define ___MOUSENAV_R1_K2___ MS_ACL1
+// #define ___MOUSENAV_R1_K3___ MS_ACL2
+// #define ___MOUSENAV_R1_K4___ _______
+// #define ___MOUSENAV_R1_K5___ _______
+
+// #define ___MOUSENAV_R2_K1___ _______
+// #define ___MOUSENAV_R2_K2___ MS_BTN1
+// #define ___MOUSENAV_R2_K3___ MS_BTN2
+// #define ___MOUSENAV_R2_K4___ MS_BTN2
+// #define ___MOUSENAV_R2_K5___ _______
+
+// #define ___MOUSENAV_R3_K1___ LGUI_T(_______)
+// #define ___MOUSENAV_R3_K2___ LALT_T(_______)
+// #define ___MOUSENAV_R3_K3___ LSFT_T(_______)
+// #define ___MOUSENAV_R3_K4___ LCTL_T(_______)
+// #define ___MOUSENAV_R3_K5___ _______
+
+// #define _________________MOUSENAV____L1________________			____MOUSENAV__L1_K1__, ____MOUSENAV__L1_K2__, ____MOUSENAV__L1_K3__, ____MOUSENAV__L1_K4__, ____MOUSENAV__L1_K5__
+// #define _________________MOUSENAV____L2________________			____MOUSENAV__L2_K1__, ____MOUSENAV__L2_K2__, ____MOUSENAV__L2_K3__, ____MOUSENAV__L2_K4__, ____MOUSENAV__L2_K5__
+// #define _________________MOUSENAV____L3________________         ____MOUSENAV__L3_K1__, ____MOUSENAV__L3_K2__, ____MOUSENAV__L3_K3__, ____MOUSENAV__L3_K4__, ____MOUSENAV__L3_K5__
+
+// #define ________________MOUSENAV_R1_________________			___MOUSENAV_R1_K1___, ___MOUSENAV_R1_K2___, ___MOUSENAV_R1_K3___, ___MOUSENAV_R1_K4___, ___MOUSENAV_R1_K5___
+// #define ________________MOUSENAV_R2_________________			___MOUSENAV_R2_K1___, ___MOUSENAV_R2_K2___, ___MOUSENAV_R2_K3___, ___MOUSENAV_R2_K4___, ___MOUSENAV_R2_K5___
+// #define ________________MOUSENAV_R3_________________			___MOUSENAV_R3_K1___, ___MOUSENAV_R3_K2___, ___MOUSENAV_R3_K3___, ___MOUSENAV_R3_K4___, ___MOUSENAV_R3_K5___
+
+
+// #define __MOUSENAV_THUMB_L1__ MS_BTN3
+// #define __MOUSENAV_THUMB_L2__ MS_BTN2
+// #define __MOUSENAV_THUMB_L3__ MS_BTN1
+// #define __MOUSENAV_THUMB_R1__ _______
+// #define __MOUSENAV_THUMB_R2__ _______
+// #define __MOUSENAV_THUMB_R3__ _______
+
+// #define _MOUSENAV_THUMBS_LEFT_2__                             __MOUSENAV_THUMB_L1__, __MOUSENAV_THUMB_L2__
+// #define _MOUSENAV_THUMBS_RIGHT_2__                            __MOUSENAV_THUMB_R1__, __MOUSENAV_THUMB_R2__
+// #define _MOUSENAV_THUMBS_LEFT_3__                             _MOUSENAV_THUMBS_LEFT_2__, __MOUSENAV_THUMB_L3__
+// #define _MOUSENAV_THUMBS_RIGHT_3__                            _MOUSENAV_THUMBS_RIGHT_2__, __MOUSENAV_THUMB_R3__
+
+// #define _MOUSENAV_THUMBS_4__                                  _MOUSENAV_THUMBS_LEFT_2__, _MOUSENAV_THUMBS_RIGHT_2__
+// #define _MOUSENAV_THUMBS_5__                                  __MOUSENAV_THUMB_L1__, __MOUSENAV_THUMB_L2__, __MOUSENAV_THUMB_R1__, __MOUSENAV_THUMB_R2__, __MOUSENAV_THUMB_R3__
+// #define _MOUSENAV_THUMBS_6__                                  _MOUSENAV_THUMBS_LEFT_3__, _MOUSENAV_THUMBS_RIGHT_3__
+
+
 #define ____MOUSENAV__L1_K1__ _______
-#define ____MOUSENAV__L1_K2__ MS_WHLU
-#define ____MOUSENAV__L1_K3__ MS_UP
-#define ____MOUSENAV__L1_K4__ MS_WHLD
+#define ____MOUSENAV__L1_K2__ OM_W_U
+#define ____MOUSENAV__L1_K3__ OM_U
+#define ____MOUSENAV__L1_K4__ OM_W_D
 #define ____MOUSENAV__L1_K5__ _______
 
-#define ____MOUSENAV__L2_K1__ MS_WHLL
-#define ____MOUSENAV__L2_K2__ MS_LEFT
-#define ____MOUSENAV__L2_K3__ MS_DOWN
-#define ____MOUSENAV__L2_K4__ MS_RGHT
-#define ____MOUSENAV__L2_K5__ MS_WHLR
+#define ____MOUSENAV__L2_K1__ OM_W_L
+#define ____MOUSENAV__L2_K2__ OM_L
+#define ____MOUSENAV__L2_K3__ OM_D
+#define ____MOUSENAV__L2_K4__ OM_R
+#define ____MOUSENAV__L2_K5__ OM_W_R
 
-#define ____MOUSENAV__L3_K1__ LGUI_T(_______)
-#define ____MOUSENAV__L3_K2__ LALT_T(_______)
-#define ____MOUSENAV__L3_K3__ LSFT_T(_______)
-#define ____MOUSENAV__L3_K4__ LCTL_T(_______)
+#define ____MOUSENAV__L3_K1__ OM_CS_L
+#define ____MOUSENAV__L3_K2__ OM_CS_U
+#define ____MOUSENAV__L3_K3__ OM_CS_D
+#define ____MOUSENAV__L3_K4__ OM_CS_R
 #define ____MOUSENAV__L3_K5__ _______
 
 
-#define ___MOUSENAV_R1_K1___ MS_ACL0
-#define ___MOUSENAV_R1_K2___ MS_ACL1
-#define ___MOUSENAV_R1_K3___ MS_ACL2
+#define ___MOUSENAV_R1_K1___ _______
+#define ___MOUSENAV_R1_K2___ _______
+#define ___MOUSENAV_R1_K3___ _______
 #define ___MOUSENAV_R1_K4___ _______
 #define ___MOUSENAV_R1_K5___ _______
 
 #define ___MOUSENAV_R2_K1___ _______
-#define ___MOUSENAV_R2_K2___ MS_BTN1
-#define ___MOUSENAV_R2_K3___ MS_BTN2
-#define ___MOUSENAV_R2_K4___ MS_BTN2
+#define ___MOUSENAV_R2_K2___ OM_SLOW
+#define ___MOUSENAV_R2_K3___ OM_FAST
+#define ___MOUSENAV_R2_K4___ _______
 #define ___MOUSENAV_R2_K5___ _______
 
 #define ___MOUSENAV_R3_K1___ LGUI_T(_______)
@@ -336,11 +399,11 @@ NOTE: These are all the same length.  If you do a search/replace
 #define ________________MOUSENAV_R3_________________			___MOUSENAV_R3_K1___, ___MOUSENAV_R3_K2___, ___MOUSENAV_R3_K3___, ___MOUSENAV_R3_K4___, ___MOUSENAV_R3_K5___
 
 
-#define __MOUSENAV_THUMB_L1__ MS_BTN3
-#define __MOUSENAV_THUMB_L2__ MS_BTN2
-#define __MOUSENAV_THUMB_L3__ MS_BTN1
-#define __MOUSENAV_THUMB_R1__ _______
-#define __MOUSENAV_THUMB_R2__ _______
+#define __MOUSENAV_THUMB_L1__ _______
+#define __MOUSENAV_THUMB_L2__ _______
+#define __MOUSENAV_THUMB_L3__ _______
+#define __MOUSENAV_THUMB_R1__ OM_BTN1
+#define __MOUSENAV_THUMB_R2__ OM_BTN2
 #define __MOUSENAV_THUMB_R3__ _______
 
 #define _MOUSENAV_THUMBS_LEFT_2__                             __MOUSENAV_THUMB_L1__, __MOUSENAV_THUMB_L2__
@@ -351,5 +414,4 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _MOUSENAV_THUMBS_4__                                  _MOUSENAV_THUMBS_LEFT_2__, _MOUSENAV_THUMBS_RIGHT_2__
 #define _MOUSENAV_THUMBS_5__                                  __MOUSENAV_THUMB_L1__, __MOUSENAV_THUMB_L2__, __MOUSENAV_THUMB_R1__, __MOUSENAV_THUMB_R2__, __MOUSENAV_THUMB_R3__
 #define _MOUSENAV_THUMBS_6__                                  _MOUSENAV_THUMBS_LEFT_3__, _MOUSENAV_THUMBS_RIGHT_3__
-
 // clang-format on

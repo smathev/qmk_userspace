@@ -23,6 +23,10 @@
 #include "process_records.h"
 #include "keymap_danish.h"
 
+#ifdef TAP_DANCE_ENABLE
+#    include "tap_dance.h"
+#endif
+
 /* Define layer names */
 enum userspace_layers {
     _NORTO= 0,
