@@ -19,6 +19,4 @@ OLED_DRIVER = ssd1306        # Standard I2C OLED driver (SSD1306)
 #WPM ENABLE
 WPM_ENABLE = yes
 
-MOUSEKEY_ENABLE = yes        # Mouse keys for cursor control
-
 DYNAMIC_TAPPING_TERM_ENABLE = yes
