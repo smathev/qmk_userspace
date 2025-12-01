@@ -48,14 +48,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         __________________NORTO_L1____________________, __________________NORTO_R1____________________,
         __________________NORTO_L2____________________, __________________NORTO_R2____________________,
         __________________NORTO_L3____________________, __________________NORTO_R3____________________,
-                                                        __NORTO_THUMBS_6__
+                                              __NORTO_THUMBS_6__
+    ),
+    [_ENTHIUMDK] = LAYOUT_sweeeeep_base_wrapper(
+        __________________ENTHIUM_L1____________________, __________________ENTHIUM_R1____________________,
+        __________________ENTHIUM_L2____________________, __________________ENTHIUM_R2____________________,
+        __________________ENTHIUM_L3____________________, __________________ENTHIUM_R3____________________,
+                                              __ENTHIUM_THUMBS_6__
     ),
 
     [_NORTNAVIGATION] = LAYOUT_sweeeeep_base_wrapper(
         ____________NORTNAVIGATION_1_______________, _________________NUMPAD_1__________________,
         ____________NORTNAVIGATION_2_______________, _________________NUMPAD_2__________________,
         ____________NORTNAVIGATION_3_______________, _________________NUMPAD_3__________________,
-                                                        _NOR_NAV_THUMBS_6__
+                                        _NOR_NAV_THUMBS_6__
     ),
 
     [_SYMFKEYS] = LAYOUT_sweeeeep_base_wrapper(

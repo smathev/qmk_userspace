@@ -182,6 +182,71 @@ NOTE: These are all the same length.  If you do a search/replace
 #define __________________NORTO_R2____________________			____NORTO_R2_K1__,    ____NORTO_R2_K2__,    ____NORTO_R2_K3__,    ____NORTO_R2_K4__,    ____NORTO_R2_K5__
 #define __________________NORTO_R3____________________			____NORTO_R3_K1__,    ____NORTO_R3_K2__,    ____NORTO_R3_K3__,    ____NORTO_R3_K4__,    ____NORTO_R3_K5__
 
+// ENTHIUM
+
+#define ____ENTHIUM_L1_K1__ KC_Z
+#define ____ENTHIUM_L1_K2__ KC_Y
+#define ____ENTHIUM_L1_K3__ KC_O
+#define ____ENTHIUM_L1_K4__ KC_U
+#define ____ENTHIUM_L1_K5__ DK_DOT
+
+#define ____ENTHIUM_L2_K1__ KC_C
+#define ____ENTHIUM_L2_K2__ KC_I
+#define ____ENTHIUM_L2_K3__ KC_A
+#define ____ENTHIUM_L2_K4__ KC_E
+#define ____ENTHIUM_L2_K5__ DK_ARNG
+
+#define ____ENTHIUM_L3_K1__ LGUI_T(KC_V)
+#define ____ENTHIUM_L3_K2__ LALT_T(KC_M)
+#define ____ENTHIUM_L3_K3__ LSFT_T(DK_OSTR)
+#define ____ENTHIUM_L3_K4__ LCTL_T(DK_AE)
+#define ____ENTHIUM_L3_K5__ DK_COMM
+
+#define ____ENTHIUM_R1_K1__ KC_Q
+#define ____ENTHIUM_R1_K2__ KC_L
+#define ____ENTHIUM_R1_K3__ KC_D
+#define ____ENTHIUM_R1_K4__ KC_P
+#define ____ENTHIUM_R1_K5__ KC_X
+
+#define ____ENTHIUM_R2_K1__ KC_K
+#define ____ENTHIUM_R2_K2__ KC_H
+#define ____ENTHIUM_R2_K3__ KC_T
+#define ____ENTHIUM_R2_K4__ KC_N
+#define ____ENTHIUM_R2_K5__ KC_S
+
+#define ____ENTHIUM_R3_K1__ KC_W
+#define ____ENTHIUM_R3_K2__ RCTL_T(KC_G)
+#define ____ENTHIUM_R3_K3__ RSFT_T(KC_B)
+#define ____ENTHIUM_R3_K4__ RALT_T(KC_F)
+#define ____ENTHIUM_R3_K5__ RGUI_T(KC_J)
+
+#define __________________ENTHIUM_L1____________________			____ENTHIUM_L1_K1__,    ____ENTHIUM_L1_K2__,    ____ENTHIUM_L1_K3__,    ____ENTHIUM_L1_K4__,    ____ENTHIUM_L1_K5__
+#define __________________ENTHIUM_L2____________________			____ENTHIUM_L2_K1__,    ____ENTHIUM_L2_K2__,    ____ENTHIUM_L2_K3__,    ____ENTHIUM_L2_K4__,    ____ENTHIUM_L2_K5__
+#define __________________ENTHIUM_L3____________________			____ENTHIUM_L3_K1__,    ____ENTHIUM_L3_K2__,    ____ENTHIUM_L3_K3__,    ____ENTHIUM_L3_K4__,    ____ENTHIUM_L3_K5__
+
+#define __________________ENTHIUM_R1____________________			____ENTHIUM_R1_K1__,    ____ENTHIUM_R1_K2__,    ____ENTHIUM_R1_K3__,    ____ENTHIUM_R1_K4__,    ____ENTHIUM_R1_K5__
+#define __________________ENTHIUM_R2____________________			____ENTHIUM_R2_K1__,    ____ENTHIUM_R2_K2__,    ____ENTHIUM_R2_K3__,    ____ENTHIUM_R2_K4__,    ____ENTHIUM_R2_K5__
+#define __________________ENTHIUM_R3____________________			____ENTHIUM_R3_K1__,    ____ENTHIUM_R3_K2__,    ____ENTHIUM_R3_K3__,    ____ENTHIUM_R3_K4__,    ____ENTHIUM_R3_K5__
+
+#define __NORTO_THUMB_L2__ LT(_MOUSENAV, DK_MINS)
+#define __NORTO_THUMB_L3__ LT(_NORTNAVIGATION, KC_E)
+
+
+#define __ENTHIUM_THUMB_L1__ _______
+#define __ENTHIUM_THUMB_L2__ LT(_MOUSENAV, DK_MINS)
+#define __ENTHIUM_THUMB_L3__ LT(_NORTNAVIGATION, KC_R)
+#define __ENTHIUM_THUMB_R1__ KC_SPACE
+#define __ENTHIUM_THUMB_R2__ KC_BSPC
+#define __ENTHIUM_THUMB_R3__ _______
+
+#define __ENTHIUM_THUMBS_LEFT_2__                             __ENTHIUM_THUMB_L2__, __ENTHIUM_THUMB_L3__
+#define __ENTHIUM_THUMBS_RIGHT_2__                            __ENTHIUM_THUMB_R1__, __ENTHIUM_THUMB_R2__
+
+#define __ENTHIUM_THUMBS_LEFT_3__                             __ENTHIUM_THUMB_L1__, __ENTHIUM_THUMB_L2__, __ENTHIUM_THUMB_L3__
+#define __ENTHIUM_THUMBS_RIGHT_3__                            __ENTHIUM_THUMB_R1__, __ENTHIUM_THUMB_R2__, __ENTHIUM_THUMB_R3__
+
+#define __ENTHIUM_THUMBS_6__                                  __ENTHIUM_THUMBS_LEFT_3__, __ENTHIUM_THUMBS_RIGHT_3__
+
 // BLANK FULL LINE
 #define ___________________BLANK___________________			_______, _______, _______, _______, _______
 
@@ -199,8 +264,8 @@ NOTE: These are all the same length.  If you do a search/replace
 #define __NORTNAV_L2_K4__ KC_RGHT
 #define __NORTNAV_L2_K5__ KC_END
 
-#define __NORTNAV_L3_K1__ LGUI_T(_______)
-#define __NORTNAV_L3_K2__ LALT_T(_______)
+#define __NORTNAV_L3_K1__ TG(_ENTHIUMDK)
+#define __NORTNAV_L3_K2__ TG(_NORTO)
 #define __NORTNAV_L3_K3__ LSFT_T(_______)
 #define __NORTNAV_L3_K4__ LCTL_T(_______)
 #define __NORTNAV_L3_K5__ LT(_SYMFKEYS, KC_PSCR)
@@ -287,70 +352,6 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _________________KB_SETUP_2________________     AS_DOWN,    DT_DOWN,    KC_E,    KC_R,    KC_D
 #define _________________KB_SETUP_3________________     AS_RPT,    DT_PRNT,    KC_TAB,  KC_L,    KC_H
 #define _________________KB_SETUP_4________________     KC_T,    KC_COMM, KC_K,    KC_SCLN, KC_DOT
-
-
-// // MOUSENAV
-// #define ____MOUSENAV__L1_K1__ _______
-// #define ____MOUSENAV__L1_K2__ MS_WHLU
-// #define ____MOUSENAV__L1_K3__ MS_UP
-// #define ____MOUSENAV__L1_K4__ MS_WHLD
-// #define ____MOUSENAV__L1_K5__ _______
-
-// #define ____MOUSENAV__L2_K1__ MS_WHLL
-// #define ____MOUSENAV__L2_K2__ MS_LEFT
-// #define ____MOUSENAV__L2_K3__ MS_DOWN
-// #define ____MOUSENAV__L2_K4__ MS_RGHT
-// #define ____MOUSENAV__L2_K5__ MS_WHLR
-
-// #define ____MOUSENAV__L3_K1__ LGUI_T(_______)
-// #define ____MOUSENAV__L3_K2__ LALT_T(_______)
-// #define ____MOUSENAV__L3_K3__ LSFT_T(_______)
-// #define ____MOUSENAV__L3_K4__ LCTL_T(_______)
-// #define ____MOUSENAV__L3_K5__ _______
-
-
-// #define ___MOUSENAV_R1_K1___ MS_ACL0
-// #define ___MOUSENAV_R1_K2___ MS_ACL1
-// #define ___MOUSENAV_R1_K3___ MS_ACL2
-// #define ___MOUSENAV_R1_K4___ _______
-// #define ___MOUSENAV_R1_K5___ _______
-
-// #define ___MOUSENAV_R2_K1___ _______
-// #define ___MOUSENAV_R2_K2___ MS_BTN1
-// #define ___MOUSENAV_R2_K3___ MS_BTN2
-// #define ___MOUSENAV_R2_K4___ MS_BTN2
-// #define ___MOUSENAV_R2_K5___ _______
-
-// #define ___MOUSENAV_R3_K1___ LGUI_T(_______)
-// #define ___MOUSENAV_R3_K2___ LALT_T(_______)
-// #define ___MOUSENAV_R3_K3___ LSFT_T(_______)
-// #define ___MOUSENAV_R3_K4___ LCTL_T(_______)
-// #define ___MOUSENAV_R3_K5___ _______
-
-// #define _________________MOUSENAV____L1________________			____MOUSENAV__L1_K1__, ____MOUSENAV__L1_K2__, ____MOUSENAV__L1_K3__, ____MOUSENAV__L1_K4__, ____MOUSENAV__L1_K5__
-// #define _________________MOUSENAV____L2________________			____MOUSENAV__L2_K1__, ____MOUSENAV__L2_K2__, ____MOUSENAV__L2_K3__, ____MOUSENAV__L2_K4__, ____MOUSENAV__L2_K5__
-// #define _________________MOUSENAV____L3________________         ____MOUSENAV__L3_K1__, ____MOUSENAV__L3_K2__, ____MOUSENAV__L3_K3__, ____MOUSENAV__L3_K4__, ____MOUSENAV__L3_K5__
-
-// #define ________________MOUSENAV_R1_________________			___MOUSENAV_R1_K1___, ___MOUSENAV_R1_K2___, ___MOUSENAV_R1_K3___, ___MOUSENAV_R1_K4___, ___MOUSENAV_R1_K5___
-// #define ________________MOUSENAV_R2_________________			___MOUSENAV_R2_K1___, ___MOUSENAV_R2_K2___, ___MOUSENAV_R2_K3___, ___MOUSENAV_R2_K4___, ___MOUSENAV_R2_K5___
-// #define ________________MOUSENAV_R3_________________			___MOUSENAV_R3_K1___, ___MOUSENAV_R3_K2___, ___MOUSENAV_R3_K3___, ___MOUSENAV_R3_K4___, ___MOUSENAV_R3_K5___
-
-
-// #define __MOUSENAV_THUMB_L1__ MS_BTN3
-// #define __MOUSENAV_THUMB_L2__ MS_BTN2
-// #define __MOUSENAV_THUMB_L3__ MS_BTN1
-// #define __MOUSENAV_THUMB_R1__ _______
-// #define __MOUSENAV_THUMB_R2__ _______
-// #define __MOUSENAV_THUMB_R3__ _______
-
-// #define _MOUSENAV_THUMBS_LEFT_2__                             __MOUSENAV_THUMB_L1__, __MOUSENAV_THUMB_L2__
-// #define _MOUSENAV_THUMBS_RIGHT_2__                            __MOUSENAV_THUMB_R1__, __MOUSENAV_THUMB_R2__
-// #define _MOUSENAV_THUMBS_LEFT_3__                             _MOUSENAV_THUMBS_LEFT_2__, __MOUSENAV_THUMB_L3__
-// #define _MOUSENAV_THUMBS_RIGHT_3__                            _MOUSENAV_THUMBS_RIGHT_2__, __MOUSENAV_THUMB_R3__
-
-// #define _MOUSENAV_THUMBS_4__                                  _MOUSENAV_THUMBS_LEFT_2__, _MOUSENAV_THUMBS_RIGHT_2__
-// #define _MOUSENAV_THUMBS_5__                                  __MOUSENAV_THUMB_L1__, __MOUSENAV_THUMB_L2__, __MOUSENAV_THUMB_R1__, __MOUSENAV_THUMB_R2__, __MOUSENAV_THUMB_R3__
-// #define _MOUSENAV_THUMBS_6__                                  _MOUSENAV_THUMBS_LEFT_3__, _MOUSENAV_THUMBS_RIGHT_3__
 
 
 #define ____MOUSENAV__L1_K1__ _______
