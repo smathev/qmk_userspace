@@ -32,8 +32,6 @@
 #define RETRO_SHIFT 500
 #define RETRO_TAPPING
 
-#define COMBO_ONLY_FROM_LAYER 0
-
 #define DUMMY_MOD_NEUTRALIZER_KEYCODE KC_RIGHT_CTRL
 
 // Neutralize left alt and left GUI (Default value)

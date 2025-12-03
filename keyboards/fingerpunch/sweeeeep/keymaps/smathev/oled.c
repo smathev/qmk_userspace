@@ -1,5 +1,9 @@
 char wpm_str[6];
 
+// Include headers for Caps Word and XCASE detection
+#include "caps_word.h"
+#include "xcase.h"
+
 #ifdef OLED_ENABLE
 //    static uint32_t oled_timer = 0;
     bool process_record_oled(uint16_t keycode, keyrecord_t *record);
@@ -150,77 +154,69 @@ void render_mod_status_ctrl_shift(uint8_t modifiers) {
     }
 }
 
-void render_logo(void) {
-    static const char PROGMEM corne_logo[] = {
-        0x80, 0x81, 0x82, 0x83, 0x84,
-        0xa0, 0xa1, 0xa2, 0xa3, 0xa4,
-        0xc0, 0xc1, 0xc2, 0xc3, 0xc4, 0};
-    oled_write_P(corne_logo, false);
-    oled_write_P(PSTR("Gio*K"), false);
-}
-
-void render_logo2(void) {
-    static const char PROGMEM corne_logo[] = {
-        0x80, 0x81, 0x82, 0x83, 0x84,
-        0xa0, 0xa1, 0xa2, 0xa3, 0xa4,
-        0xc0, 0xc1, 0xc2, 0xc3, 0xc4, 0};
-    oled_write_P(corne_logo, false);
-    sprintf(wpm_str,">>%03d", get_current_wpm());
-    oled_write(wpm_str,false);
-}
-
-
-void render_layer_state(void) {
-    static const char PROGMEM default_layer[] = {
-        0x20, 0x94, 0x95, 0x96, 0x20,
-        0x20, 0xb4, 0xb5, 0xb6, 0x20,
-        0x20, 0xd4, 0xd5, 0xd6, 0x20, 0};
-    static const char PROGMEM raise_layer[] = {
-        0x20, 0x97, 0x98, 0x99, 0x20,
-        0x20, 0xb7, 0xb8, 0xb9, 0x20,
-        0x20, 0xd7, 0xd8, 0xd9, 0x20, 0};
-    static const char PROGMEM lower_layer[] = {
-        0x20, 0x9a, 0x9b, 0x9c, 0x20,
-        0x20, 0xba, 0xbb, 0xbc, 0x20,
-        0x20, 0xda, 0xdb, 0xdc, 0x20, 0};
-
-    // Print Base Layer Name
-    if (default_layer_state & (1UL << _ENTHIUMDK)) {
-        oled_write_P(PSTR("Enth "), false);
+void render_base_layer_state(void) {
+    if (default_layer_state & (1UL << _QWERTY)) {
+        oled_write_P(PSTR("QWERT"), false);
+    } else if (default_layer_state & (1UL << _ENTHIUMDK)) {
+        oled_write_P(PSTR("ENTHI"), false);
     } else {
-        oled_write_P(PSTR("Nort "), false);
+        oled_write_P(PSTR("NORTO"), false);
     }
+}
 
-    // Get the highest active layer
-    uint8_t layer = get_highest_layer(layer_state);
-
-    if(layer == _SYMFKEYS) {
-        oled_write_P(lower_layer, false);
-    } else if(layer == _NORTNAVIGATION) {
-        oled_write_P(raise_layer, false);
+void render_active_layer_state(void) {
+    if (layer_state_is(_MOUSENAV)) {
+        oled_write_P(PSTR("MOUSE"), false);
+    } else if (layer_state_is(_SYMFKEYS)) {
+        oled_write_P(PSTR("SYMB "), false);
+    } else if (layer_state_is(_NORTNAVIGATION)) {
+        oled_write_P(PSTR("NAV  "), false);
+    } else if (layer_state_is(_SETUP)) {
+        oled_write_P(PSTR("SETUP"), false);
     } else {
-        oled_write_P(default_layer, false);
+        oled_write_P(PSTR("     "), false);
     }
 }
 
 void render_status_main(void) {
-    render_logo();
-    render_space();
-    render_layer_state();
-    render_space();
+    render_base_layer_state();
+    oled_write_P(PSTR("\n"), false);
+    render_active_layer_state();
+    oled_write_P(PSTR("\n\n"), false);
+
     uint8_t mods = get_mods()|get_oneshot_mods()|get_weak_mods()|get_oneshot_locked_mods();
     render_mod_status_gui_alt(mods);
     render_mod_status_ctrl_shift(mods);
+
+    oled_write_P(PSTR("\n"), false);
+    oled_write_P(PSTR("WPM: "), false);
+    char wpm_str[6];
+    sprintf(wpm_str, "%03d", get_current_wpm());
+    oled_write(wpm_str, false);
+
+    // Show Caps Word and XCASE status
+    oled_write_P(PSTR("\n"), false);
+    if (is_caps_word_on()) {
+        oled_write_P(PSTR("CAPS "), false);
+    } else {
+        oled_write_P(PSTR("     "), false);
+    }
+    if (is_xcase_active()) {
+        oled_write_P(PSTR("XCAS"), false);
+    } else {
+        oled_write_P(PSTR("    "), false);
+    }
 }
 
 void render_status_secondary(void) {
-    render_logo2();
-    render_space();
-    render_layer_state();
-    render_space();
-    uint8_t mods = get_mods()|get_oneshot_mods()|get_weak_mods()|get_oneshot_locked_mods();
-    render_mod_status_gui_alt(mods);
-    render_mod_status_ctrl_shift(mods);
+    render_base_layer_state();
+    oled_write_P(PSTR("\n"), false);
+
+    oled_write_P(PSTR("WPM: "), false);
+    oled_write_P(PSTR("\n"), false);
+    char wpm_str[6];
+    sprintf(wpm_str, "%03d", get_current_wpm());
+    oled_write(wpm_str, false);
 }
 
  static bool oled_active = true;

@@ -16,6 +16,8 @@ AUTO_SHIFT_ENABLE = yes      # Auto shift for hold-to-shift
 OLED_ENABLE = yes            # Enable OLED displays
 OLED_DRIVER = ssd1306        # Standard I2C OLED driver (SSD1306)
 
+CAPS_WORD_ENABLE = yes
+
 #WPM ENABLE
 WPM_ENABLE = yes
 

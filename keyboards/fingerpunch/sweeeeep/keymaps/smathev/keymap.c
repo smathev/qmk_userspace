@@ -77,14 +77,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         __________________QWERTY_L3____________________, _________________KB_SETUP_3________________,
                            _______, TG(_SETUP), TG(_NORTO), TG(_NORTO), TG(_SETUP), _______
     ),
-
         [_MOUSENAV] = LAYOUT_sweeeeep_base_wrapper(
         _________________MOUSENAV____L1________________, ________________MOUSENAV_R1_________________,
         _________________MOUSENAV____L2________________, ________________MOUSENAV_R2_________________,
         _________________MOUSENAV____L3________________, ________________MOUSENAV_R3_________________,
                                                             _MOUSENAV_THUMBS_6__
-    )
+    ),
 
+    [_QWERTY] = LAYOUT_sweeeeep_base_wrapper(
+        __________________QWERTY_L1____________________, __________________QWERTY_R1____________________,
+        __________________QWERTY_L2____________________, __________________QWERTY_R2____________________,
+        __________________QWERTY_L3____________________, __________________QWERTY_R3____________________,
+                                              __QWERTY_THUMBS_6__
+    )
 };
 
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
@@ -120,23 +125,3 @@ void keyboard_post_init_keymap(void) {
     add_xcase_exclusion_keycode(DK_AE);    // Æ
     add_xcase_exclusion_keycode(DK_OSTR);  // Ø
 }
-
-// ============================================================================
-// TAP DANCE ARRAY - Defined here for QMK introspection
-// Actual functions are in users/smathev/tap_dance.c
-// ============================================================================
-#ifdef TAP_DANCE_ENABLE
-
-// Forward declarations from tap_dance.c
-void td_bspc_mouse_finished(tap_dance_state_t *state, void *user_data);
-void td_bspc_mouse_reset(tap_dance_state_t *state, void *user_data);
-void td_mins_nav_finished(tap_dance_state_t *state, void *user_data);
-void td_mins_nav_reset(tap_dance_state_t *state, void *user_data);
-
-// Tap Dance actions array - must be in keymap for QMK introspection
-tap_dance_action_t tap_dance_actions[] = {
-    [TD_BSPC_MOUSE] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_bspc_mouse_finished, td_bspc_mouse_reset),
-    [TD_MINS_NAV] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_mins_nav_finished, td_mins_nav_reset),
-};
-
-#endif // TAP_DANCE_ENABLE

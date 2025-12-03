@@ -106,7 +106,7 @@ NOTE: These are all the same length.  If you do a search/replace
 
 
 #define __NORTO_THUMB_L1__ _______
-#define __NORTO_THUMB_L2__ LT(_MOUSENAV, DK_MINS)
+#define __NORTO_THUMB_L2__ LT(_SYMFKEYS, DK_MINS)
 #define __NORTO_THUMB_L3__ LT(_NORTNAVIGATION, KC_E)
 #define __NORTO_THUMB_R1__ KC_SPACE
 #define __NORTO_THUMB_R2__ KC_BSPC
@@ -228,12 +228,8 @@ NOTE: These are all the same length.  If you do a search/replace
 #define __________________ENTHIUM_R2____________________			____ENTHIUM_R2_K1__,    ____ENTHIUM_R2_K2__,    ____ENTHIUM_R2_K3__,    ____ENTHIUM_R2_K4__,    ____ENTHIUM_R2_K5__
 #define __________________ENTHIUM_R3____________________			____ENTHIUM_R3_K1__,    ____ENTHIUM_R3_K2__,    ____ENTHIUM_R3_K3__,    ____ENTHIUM_R3_K4__,    ____ENTHIUM_R3_K5__
 
-#define __NORTO_THUMB_L2__ LT(_MOUSENAV, DK_MINS)
-#define __NORTO_THUMB_L3__ LT(_NORTNAVIGATION, KC_E)
-
-
 #define __ENTHIUM_THUMB_L1__ _______
-#define __ENTHIUM_THUMB_L2__ LT(_MOUSENAV, DK_MINS)
+#define __ENTHIUM_THUMB_L2__ LT(_SYMFKEYS, DK_MINS)
 #define __ENTHIUM_THUMB_L3__ LT(_NORTNAVIGATION, KC_R)
 #define __ENTHIUM_THUMB_R1__ KC_SPACE
 #define __ENTHIUM_THUMB_R2__ KC_BSPC
@@ -264,11 +260,11 @@ NOTE: These are all the same length.  If you do a search/replace
 #define __NORTNAV_L2_K4__ KC_RGHT
 #define __NORTNAV_L2_K5__ KC_END
 
-#define __NORTNAV_L3_K1__ TG(_ENTHIUMDK)
-#define __NORTNAV_L3_K2__ TG(_NORTO)
+#define __NORTNAV_L3_K1__ LGUI_T(_______)
+#define __NORTNAV_L3_K2__ LALT_T(_______)
 #define __NORTNAV_L3_K3__ LSFT_T(_______)
 #define __NORTNAV_L3_K4__ LCTL_T(_______)
-#define __NORTNAV_L3_K5__ LT(_SYMFKEYS, KC_PSCR)
+#define __NORTNAV_L3_K5__ KC_PSCR
 
 #define ____________NORTNAVIGATION_1_______________			__NORTNAV_L1_K1__, __NORTNAV_L1_K2__, __NORTNAV_L1_K3__, __NORTNAV_L1_K4__, __NORTNAV_L1_K5__
 #define ____________NORTNAVIGATION_2_______________			__NORTNAV_L2_K1__, __NORTNAV_L2_K2__, __NORTNAV_L2_K3__, __NORTNAV_L2_K4__, __NORTNAV_L2_K5__
@@ -316,22 +312,22 @@ NOTE: These are all the same length.  If you do a search/replace
 #define ______FKEY____L3_K5__ _______
 
 
-#define __NORTSYMBOLS_R1_K1__ _______
-#define __NORTSYMBOLS_R1_K2__ XCASE_DK_SNAKE
-#define __NORTSYMBOLS_R1_K3__ XCASE_DK_KEBAB
-#define __NORTSYMBOLS_R1_K4__ XCASE_CAMEL
-#define __NORTSYMBOLS_R1_K5__ XCASE_OFF
+#define __NORTSYMBOLS_R1_K1__ XCASE_DK_KEBAB
+#define __NORTSYMBOLS_R1_K2__ DK_LPRN
+#define __NORTSYMBOLS_R1_K3__ DK_QUOT // ' SHFITED "
+#define __NORTSYMBOLS_R1_K4__ CW_TOGG
+#define __NORTSYMBOLS_R1_K5__ _______
 
-#define __NORTSYMBOLS_R2_K1__ DK_AT // @
+#define __NORTSYMBOLS_R2_K1__ XCASE_DK_SNAKE//  XCASE_DK_KEBAB
 #define __NORTSYMBOLS_R2_K2__ DK_LBRC // [ - Shifted ]
-#define __NORTSYMBOLS_R2_K3__ DK_LCBR // { - Shifted {}
-#define __NORTSYMBOLS_R2_K4__ DK_CIRC
-#define __NORTSYMBOLS_R2_K5__ _______
+#define __NORTSYMBOLS_R2_K3__ DK_AT // @
+#define __NORTSYMBOLS_R2_K4__ DK_DLR // $ - Shifted €
+#define __NORTSYMBOLS_R2_K5__ DK_TILD
 
-#define __NORTSYMBOLS_R3_K1__ DK_QUOT // ' SHFITED "
-#define __NORTSYMBOLS_R3_K2__ DK_LABK // < - Shifted >
-#define __NORTSYMBOLS_R3_K3__ DK_DLR // $ - Shifted €
-#define __NORTSYMBOLS_R3_K4__ DK_PIPE // |
+#define __NORTSYMBOLS_R3_K1__ XCASE_CAMEL
+#define __NORTSYMBOLS_R3_K2__ DK_LCBR // { - Shifted {}
+#define __NORTSYMBOLS_R3_K3__ DK_LABK // < - Shifted >
+#define __NORTSYMBOLS_R3_K4__ DK_CIRC
 #define __NORTSYMBOLS_R3_K5__ DK_GRV // ` - Shifted ¨
 
 
@@ -373,8 +369,8 @@ NOTE: These are all the same length.  If you do a search/replace
 #define ____MOUSENAV__L3_K5__ _______
 
 
-#define ___MOUSENAV_R1_K1___ _______
-#define ___MOUSENAV_R1_K2___ _______
+#define ___MOUSENAV_R1_K1___ TO_NORTO_EXIT_MOUSE
+#define ___MOUSENAV_R1_K2___ TO_ENTH_EXIT_MOUSE
 #define ___MOUSENAV_R1_K3___ _______
 #define ___MOUSENAV_R1_K4___ _______
 #define ___MOUSENAV_R1_K5___ _______

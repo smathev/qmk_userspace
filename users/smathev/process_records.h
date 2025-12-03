@@ -4,6 +4,8 @@
 enum userspace_custom_keycodes {
     XCASE_DK_SNAKE = QK_USER_0,  // Danish snake_case with DK_UNDS
     XCASE_DK_KEBAB,              // Danish kebab-case with DK_MINS
+    TO_NORTO_EXIT_MOUSE,         // Set default layer to NORTO and exit Mouse layer
+    TO_ENTH_EXIT_MOUSE,          // Set default layer to ENTHIUMDK and exit Mouse layer
     NEW_SAFE_RANGE
 };
 

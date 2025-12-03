@@ -23,10 +23,6 @@
 #include "process_records.h"
 #include "keymap_danish.h"
 
-#ifdef TAP_DANCE_ENABLE
-#    include "tap_dance.h"
-#endif
-
 /* Define layer names */
 enum userspace_layers {
     _NORTO= 0,
@@ -34,7 +30,8 @@ enum userspace_layers {
     _NORTNAVIGATION,
     _SYMFKEYS,
     _SETUP,
-    _MOUSENAV
+    _MOUSENAV,
+    _QWERTY
 };
 
 void          press_super_alt_tab(bool shift);

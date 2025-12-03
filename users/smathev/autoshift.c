@@ -1,4 +1,5 @@
 #include "keymap_danish.h"
+#include "quantum_keycodes.h"
 
 bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
     switch(keycode) {
@@ -9,6 +10,8 @@ bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
         case DK_LCBR:
         case DK_LABK:
         case DK_QUOT:
+        case DK_TILD:
+        case DK_GRV:
             return true;
         default:
             // Enable Auto-Shift for mod-tap keys (for Retro-Shift to work)
@@ -46,6 +49,12 @@ void autoshift_press_user(uint16_t keycode, bool shifted, keyrecord_t *record) {
         case DK_DLR:
             register_code16((!shifted) ? DK_DLR : DK_EURO);
             break;
+        case DK_TILD:
+            register_code16((!shifted) ? DK_TILD : DK_PIPE);
+            break;
+        case DK_GRV:
+            register_code16((!shifted) ? DK_GRV : DK_DIAE);
+            break;
         default:
             if (shifted) {
                 add_weak_mods(MOD_BIT(KC_LSFT));
@@ -78,6 +87,12 @@ void autoshift_release_user(uint16_t keycode, bool shifted, keyrecord_t *record)
             break;
         case DK_QUOT:
             unregister_code16((!shifted) ? DK_QUOT : DK_DQUO);
+            break;
+        case DK_TILD:
+            unregister_code16((!shifted) ? DK_TILD : DK_PIPE);
+            break;
+        case DK_GRV:
+            unregister_code16((!shifted) ? DK_GRV : DK_DIAE);
             break;
         default:
             // & 0xFF gets the Tap key for Tap Holds, required when using Retro Shift

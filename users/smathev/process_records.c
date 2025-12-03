@@ -30,7 +30,43 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 enable_xcase_with(DK_MINS);  // Danish minus
             }
             return false;
+        case TO_NORTO_EXIT_MOUSE:
+            if (record->event.pressed) {
+                set_single_persistent_default_layer(_NORTO);
+                layer_off(_MOUSENAV);
+            }
+            return false;
+        case TO_ENTH_EXIT_MOUSE:
+            if (record->event.pressed) {
+                set_single_persistent_default_layer(_ENTHIUMDK);
+                layer_off(_MOUSENAV);
+            }
+            return false;
         // COMMENT TO DISABLE MACROS
     }
     return true;
+}
+
+// Caps Word configuration - allow Danish characters
+bool caps_word_press_user(uint16_t keycode) {
+    switch (keycode) {
+        // Keycodes that continue Caps Word, with shift applied.
+        case KC_A ... KC_Z:
+        case DK_AE:      // Æ
+        case DK_OSTR:    // Ø
+        case DK_ARNG:    // Å
+        case KC_MINS:
+            add_weak_mods(MOD_BIT(KC_LSFT));  // Apply shift to next key.
+            return true;
+
+        // Keycodes that continue Caps Word, without shifting.
+        case KC_1 ... KC_0:
+        case KC_BSPC:
+        case KC_DEL:
+        case KC_UNDS:
+            return true;
+
+        default:
+            return false;  // Deactivate Caps Word.
+    }
 }
