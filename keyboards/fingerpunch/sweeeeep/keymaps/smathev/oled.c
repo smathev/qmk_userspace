@@ -184,6 +184,13 @@ void render_layer_state(void) {
         0x20, 0xba, 0xbb, 0xbc, 0x20,
         0x20, 0xda, 0xdb, 0xdc, 0x20, 0};
 
+    // Print Base Layer Name
+    if (default_layer_state & (1UL << _ENTHIUMDK)) {
+        oled_write_P(PSTR("Enth "), false);
+    } else {
+        oled_write_P(PSTR("Nort "), false);
+    }
+
     // Get the highest active layer
     uint8_t layer = get_highest_layer(layer_state);
 
