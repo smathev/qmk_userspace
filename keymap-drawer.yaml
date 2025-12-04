@@ -1,0 +1,101 @@
+layout:
+  qmk_keyboard: corne_rotated
+  layout_name: LAYOUT_split_3x5_3
+
+layers:
+  NORTO:
+    - [Ø, Æ, U, G, J, B, F, L, H, X]
+    - [O, I, A, T, M, P, N, R, S, D]
+    - [{h: Gui, t: ","}, {h: Alt, t: Y}, {h: Shift, t: Å}, {h: Ctrl, t: V}, C, W, {h: Ctrl, t: K}, {h: Shift, t: Z}, {h: Alt, t: Q}, {h: Gui, t: "."}]
+    - {type: ghost}
+    - {h: SYM, t: "-"}
+    - {h: NAV, t: E}
+    - Space
+    - BSpace
+    - {type: ghost}
+
+  ENTHIUM:
+    - [Z, Y, O, U, ".", Q, L, D, P, X]
+    - [C, I, A, E, Å, K, H, T, N, S]
+    - [{h: Gui, t: V}, {h: Alt, t: M}, {h: Shift, t: Ø}, {h: Ctrl, t: Æ}, ",", W, {h: Ctrl, t: G}, {h: Shift, t: B}, {h: Alt, t: F}, {h: Gui, t: J}]
+    - {type: ghost}
+    - {h: SYM, t: "-"}
+    - {h: NAV, t: R}
+    - Space
+    - BSpace
+    - {type: ghost}
+
+  NAV:
+    - [Esc, "Page Up", Up, "Page Down", T, "*", "7", "8", "9", "+"]
+    - [Home, Left, Down, Right, End, "/", "4", "5", "6", "-"]
+    - [{h: Gui}, {h: Alt}, {h: Shift}, {h: Ctrl}, "Print Scrn", "(", {h: Ctrl, t: "1"}, {h: Shift, t: "2"}, {h: Alt, t: "3"}, {h: Gui, t: "0"}]
+    - {type: ghost}
+    - {type: trans}
+    - {type: held}
+    - {type: trans}
+    - Delete
+    - {type: ghost}
+
+  SYM:
+    - [F1, F2, F3, F4, F5, "Kebab-case", "(", "'", "Caps Word", null]
+    - [F6, F7, F8, F9, F10, "Snake_case", "[", "@", "$", "~"]
+    - [{h: Gui, t: F11}, {h: Alt, t: F12}, {h: Shift}, {h: Ctrl}, null, "camelCase", "{", "<", "^", "`"]
+    - {type: trans}
+    - {h: SETUP, type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+    - {type: trans}
+
+  SETUP:
+    - [Q, W, E, R, T, "AS Up", "DT Up", C, V, G]
+    - [A, S, D, F, G, "AS Down", "DT Down", E, R, D]
+    - [{h: Gui, t: Z}, {h: Alt, t: X}, {h: Shift, t: C}, {h: Ctrl, t: V}, B, "AS Rpt", "DT Print", Tab, L, H]
+    - {type: trans}
+    - {t: SETUP}
+    - {t: NORTO}
+    - {t: NORTO}
+    - {t: SETUP}
+    - {type: trans}
+
+  MOUSE:
+    - [null, "Scroll Up", "Mouse Up", "Scroll Down", null, "To NORTO", "To ENTHIUM", null, null, null]
+    - ["Scroll L", "Mouse L", "Mouse Down", "Mouse R", "Scroll R", null, "Mouse Slow", "Mouse Fast", null, null]
+    - ["Cursor Speed L", "Cursor Speed U", "Cursor Speed D", "Cursor Speed R", null, {h: Gui}, {h: Alt}, {h: Shift}, {h: Ctrl}, null]
+    - {type: ghost}
+    - {type: trans}
+    - {type: trans}
+    - "Mouse Btn1"
+    - "Mouse Btn2"
+    - {type: ghost}
+
+  QWERTY:
+    - [Q, W, E, R, T, Y, U, I, O, P]
+    - [A, S, D, F, G, H, J, K, L, Å]
+    - [{h: Gui, t: Z}, {h: Alt, t: X}, {h: Shift, t: C}, {h: Ctrl, t: V}, B, N, {h: Ctrl, t: M}, {h: Shift, t: Æ}, {h: Alt, t: Ø}, {h: Gui, t: "-"}]
+    - Delete
+    - ","
+    - BSpace
+    - Space
+    - "."
+    - Enter
+
+combos:
+  # A + S -> Tab
+  - {p: [10, 11], k: Tab, l: [NORTO, ENTHIUM, QWERTY]}
+  # E + R -> F5
+  - {p: [2, 3], k: F5, l: [NORTO, ENTHIUM, QWERTY]}
+  # Q + W -> Esc
+  - {p: [0, 1], k: Esc, l: [NORTO, ENTHIUM, QWERTY]}
+  # O + P -> Delete
+  - {p: [8, 9], k: Delete, l: [NORTO, ENTHIUM, QWERTY]}
+  # R + T -> New Tab (Ctrl+T)
+  - {p: [3, 4], k: "Ctrl+T", l: [NORTO, ENTHIUM, QWERTY]}
+  # L + Å -> Enter
+  - {p: [17, 18], k: Enter, l: [NORTO, ENTHIUM, QWERTY]}
+  # I + O -> Mouse Layer Toggle
+  - {p: [7, 8], k: "Mouse Layer", l: [NORTO, ENTHIUM, QWERTY]}
+  # T + G + B -> Reset (Left)
+  - {p: [4, 14, 24], k: Reset, l: [NORTO, ENTHIUM, QWERTY]}
+  # Y + H + N -> Reset (Right)
+  - {p: [5, 15, 25], k: Reset, l: [NORTO, ENTHIUM, QWERTY]}
