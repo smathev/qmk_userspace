@@ -277,8 +277,61 @@ main() {
     echo "✓ EE_HANDS will auto-detect left/right on boot"
     echo ""
 
-    # Update keymap visualization only after successful RIGHT side flash
+    # Prompt for YAML update before generating visuals (only for RIGHT or BOTH)
     if [[ "$flash_mode" == "RIGHT" ]] || [[ "$flash_mode" == "BOTH" ]]; then
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo "📝 KEYMAP YAML UPDATE"
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo ""
+        echo "Did you modify any wrapper definitions in keymap.c?"
+        echo ""
+        echo "Options:"
+        echo "  y - Yes, I need to update keymap-drawer.yaml"
+        echo "  n - No changes to wrappers, skip YAML update"
+        echo ""
+        read -p "Update YAML? [y/N]: " -n 1 -r
+        echo ""
+        echo ""
+
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            echo "🤖 AI ASSISTANT PROMPT"
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            echo ""
+            echo "Copy and paste this to your AI assistant:"
+            echo ""
+            echo "────────────────────────────────────────────────"
+            echo "Please update keymap-drawer.yaml based on changes in:"
+            echo "  - Wrapper definitions: users/smathev/wrappers.h"
+            echo "  - Physical layout: keyboards/.../keymap.c"
+            echo "  - Combos: users/smathev/combos.c/h"
+            echo "  - Custom behaviors: users/smathev/process_records.c/h"
+            echo "  - Helpers: users/smathev/smathev.h"
+            echo ""
+            echo "Follow the instructions in:"
+            echo ".github/yaml-maintenance-instructions.md"
+            echo ""
+            echo "Reference the mapping guide:"
+            echo ".github/wrapper-to-yaml-mapping.md"
+            echo "────────────────────────────────────────────────"
+            echo ""
+            echo "Files to check:"
+            echo "  - Wrappers: users/smathev/wrappers.h"
+            echo "  - Layout: keyboards/fingerpunch/sweeeeep/keymaps/smathev/keymap.c"
+            echo "  - Combos: users/smathev/combos.c/h"
+            echo "  - Behaviors: users/smathev/process_records.c/h"
+            echo "  - Helpers: users/smathev/smathev.h"
+            echo "  - Target: keymap-drawer.yaml"
+            echo "  - Instructions: .github/yaml-maintenance-instructions.md"
+            echo "  - Reference: .github/wrapper-to-yaml-mapping.md"
+            echo ""
+            read -p "Press Enter when YAML has been updated..."
+            echo ""
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            echo ""
+        fi
+
+        # Update keymap visualization only after YAML is confirmed updated
         update_keymap_visual
     fi
 
