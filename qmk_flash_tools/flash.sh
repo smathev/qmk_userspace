@@ -269,6 +269,12 @@ main() {
     fi
     echo "✓ EE_HANDS will auto-detect left/right on boot"
     echo ""
+
+    # Update keymap visualization only after successful RIGHT side flash
+    if [[ "$flash_mode" == "RIGHT" ]] || [[ "$flash_mode" == "BOTH" ]]; then
+        update_keymap_visual
+    fi
+
     echo "Your keyboard is ready to use!"
     echo ""
 }
