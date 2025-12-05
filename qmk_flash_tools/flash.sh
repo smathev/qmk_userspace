@@ -113,6 +113,43 @@ flash_side() {
 }
 
 # ----------------------
+# Function: update_keymap_visual
+# Regenerate keymap visual after successful flash
+# ----------------------
+update_keymap_visual() {
+    echo ""
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "🎨 Updating keymap visualization..."
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo ""
+
+    local userspace_dir="$(dirname "$SCRIPT_DIR")"
+    local keymap_yaml="$userspace_dir/keymap-drawer.yaml"
+    local output_svg="$userspace_dir/visual_keymap.svg"
+
+    if [[ ! -f "$keymap_yaml" ]]; then
+        echo "⚠️  Warning: keymap-drawer.yaml not found at $keymap_yaml"
+        echo "   Skipping visualization update"
+        return 0
+    fi
+
+    if ! command -v keymap &> /dev/null; then
+        echo "⚠️  Warning: keymap-drawer not installed"
+        echo "   Install with: pip install keymap-drawer"
+        echo "   Skipping visualization update"
+        return 0
+    fi
+
+    if keymap draw "$keymap_yaml" -o "$output_svg" 2>&1 | grep -v "INFO"; then
+        echo "✅ Keymap visualization updated: visual_keymap.svg"
+        return 0
+    else
+        echo "⚠️  Warning: Failed to update keymap visualization"
+        return 0
+    fi
+}
+
+# ----------------------
 # Function: main
 # Main workflow - simple and clear!
 # ----------------------

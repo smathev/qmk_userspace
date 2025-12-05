@@ -60,4 +60,4 @@ This can also be used to control which fork is used, though only upstream `qmk_f
 
 ## Keymap Visualization
 
-![Keymap Layout](./keymap_yaml)
+![Keymap Layout](./visual_keymap.svg)

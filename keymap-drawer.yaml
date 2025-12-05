@@ -3,17 +3,6 @@ layout:
   layout_name: LAYOUT_split_3x5_3
 
 layers:
-  NORTO:
-    - [Ø, Æ, U, G, J, B, F, L, H, X]
-    - [O, I, A, T, M, P, N, R, S, D]
-    - [{h: Gui, t: ","}, {h: Alt, t: Y}, {h: Shift, t: Å}, {h: Ctrl, t: V}, C, W, {h: Ctrl, t: K}, {h: Shift, t: Z}, {h: Alt, t: Q}, {h: Gui, t: "."}]
-    - {type: ghost}
-    - {h: SYM, t: "-"}
-    - {h: NAV, t: E}
-    - Space
-    - BSpace
-    - {type: ghost}
-
   ENTHIUM:
     - [Z, Y, O, U, ".", Q, L, D, P, X]
     - [C, I, A, E, Å, K, H, T, N, S]
@@ -24,7 +13,6 @@ layers:
     - Space
     - BSpace
     - {type: ghost}
-
   NAV:
     - [Esc, "Page Up", Up, "Page Down", T, "*", "7", "8", "9", "+"]
     - [Home, Left, Down, Right, End, "/", "4", "5", "6", "-"]
@@ -35,7 +23,16 @@ layers:
     - {type: trans}
     - Delete
     - {type: ghost}
-
+  NORTO:
+    - [Ø, Æ, U, G, J, B, F, L, H, X]
+    - [O, I, A, T, M, P, N, R, S, D]
+    - [{h: Gui, t: ","}, {h: Alt, t: Y}, {h: Shift, t: Å}, {h: Ctrl, t: V}, C, W, {h: Ctrl, t: K}, {h: Shift, t: Z}, {h: Alt, t: Q}, {h: Gui, t: "."}]
+    - {type: ghost}
+    - {h: SYM, t: "-"}
+    - {h: NAV, t: E}
+    - Space
+    - BSpace
+    - {type: ghost}
   SYM:
     - [F1, F2, F3, F4, F5, "Kebab-case", "(", "'", "Caps Word", null]
     - [F6, F7, F8, F9, F10, "Snake_case", "[", "@", "$", "~"]
