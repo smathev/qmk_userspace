@@ -122,6 +122,8 @@ update_keymap_visual() {
     echo "🎨 Updating keymap visualization..."
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     echo ""
+    echo "Regenerating visual keymap from latest firmware..."
+    echo ""
 
     local userspace_dir="$(dirname "$SCRIPT_DIR")"
     local keymap_yaml="$userspace_dir/keymap-drawer.yaml"
@@ -140,10 +142,15 @@ update_keymap_visual() {
         return 0
     fi
 
+    echo "Running: keymap draw keymap-drawer.yaml -o visual_keymap.svg"
     if keymap draw "$keymap_yaml" -o "$output_svg" 2>&1 | grep -v "INFO"; then
-        echo "✅ Keymap visualization updated: visual_keymap.svg"
+        echo ""
+        echo "✅ Keymap visualization updated successfully!"
+        echo "   📄 File: visual_keymap.svg"
+        echo "   📂 Location: qmk_userspace/"
         return 0
     else
+        echo ""
         echo "⚠️  Warning: Failed to update keymap visualization"
         return 0
     fi
