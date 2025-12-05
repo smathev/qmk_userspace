@@ -362,18 +362,17 @@ NOTE: These are all the same length.  If you do a search/replace
 #define ____MOUSENAV__L2_K4__ OM_R
 #define ____MOUSENAV__L2_K5__ OM_W_R
 
-#define ____MOUSENAV__L3_K1__ OM_CS_L
-#define ____MOUSENAV__L3_K2__ OM_CS_U
-#define ____MOUSENAV__L3_K3__ OM_CS_D
-#define ____MOUSENAV__L3_K4__ OM_CS_R
+#define ____MOUSENAV__L3_K1__ LGUI_T(_______)
+#define ____MOUSENAV__L3_K2__ LALT_T(_______)
+#define ____MOUSENAV__L3_K3__ LSFT_T(_______)
+#define ____MOUSENAV__L3_K4__ LCTL_T(_______)
 #define ____MOUSENAV__L3_K5__ _______
 
-
-#define ___MOUSENAV_R1_K1___ TO_NORTO_EXIT_MOUSE
-#define ___MOUSENAV_R1_K2___ TO_ENTH_EXIT_MOUSE
-#define ___MOUSENAV_R1_K3___ _______
-#define ___MOUSENAV_R1_K4___ _______
-#define ___MOUSENAV_R1_K5___ _______
+#define ___MOUSENAV_R1_K1___ _______ // TO_NORTO_EXIT_MOUSE
+#define ___MOUSENAV_R1_K2___ OM_CS_L // TO_ENTH_EXIT_MOUSE
+#define ___MOUSENAV_R1_K3___ OM_CS_U
+#define ___MOUSENAV_R1_K4___ OM_CS_D
+#define ___MOUSENAV_R1_K5___ OM_CS_R
 
 #define ___MOUSENAV_R2_K1___ _______
 #define ___MOUSENAV_R2_K2___ OM_SLOW
@@ -381,11 +380,11 @@ NOTE: These are all the same length.  If you do a search/replace
 #define ___MOUSENAV_R2_K4___ _______
 #define ___MOUSENAV_R2_K5___ _______
 
-#define ___MOUSENAV_R3_K1___ LGUI_T(_______)
-#define ___MOUSENAV_R3_K2___ LALT_T(_______)
-#define ___MOUSENAV_R3_K3___ LSFT_T(_______)
-#define ___MOUSENAV_R3_K4___ LCTL_T(_______)
-#define ___MOUSENAV_R3_K5___ _______
+#define ___MOUSENAV_R3_K1___ TO_ENTH_EXIT_MOUSE
+#define ___MOUSENAV_R3_K2___ RCTL_T(TO_NORTO_EXIT_MOUSE)
+#define ___MOUSENAV_R3_K3___ RSFT_T(_______)
+#define ___MOUSENAV_R3_K4___ RALT_T(_______)
+#define ___MOUSENAV_R3_K5___ RGUI_T(_______)
 
 #define _________________MOUSENAV____L1________________			____MOUSENAV__L1_K1__, ____MOUSENAV__L1_K2__, ____MOUSENAV__L1_K3__, ____MOUSENAV__L1_K4__, ____MOUSENAV__L1_K5__
 #define _________________MOUSENAV____L2________________			____MOUSENAV__L2_K1__, ____MOUSENAV__L2_K2__, ____MOUSENAV__L2_K3__, ____MOUSENAV__L2_K4__, ____MOUSENAV__L2_K5__
